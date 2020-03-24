@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     render() {
@@ -8,11 +9,11 @@ class Home extends Component {
             <Jumbotron fluid>
               <h1>Bloodborne Pathogens (BBP) <br/>
                 Exposure Control Plan
-              </h1>
-              <div>
-                <Button variant='primary'>Start</Button>
-              </div>
-            </Jumbotron>
+              </h1>   
+            <Link to="/Start">
+            <Button variant='primary'>Start</Button>
+            </Link>
+            </Jumbotron> 
         );
     }
 }

@@ -5,6 +5,8 @@ import {
   Route
 } from 'react-router-dom'
 import Home from './pages/Home'
+import Start from './pages/Start';
+
 
 class App extends Component {
   render() {
@@ -21,6 +23,7 @@ class App extends Component {
         <Router>
           <div>
             <Home />
+            {/* <Start/> */}
           </div>
         </Router>
       </div>

@@ -10,6 +10,7 @@ class Home extends Component {
               <h1>Bloodborne Pathogens (BBP) <br/>
                 Exposure Control Plan
               </h1>   
+              {/*use Link on a button to proceed to next page  */}
             <Link to="/Start">
             <Button variant='primary'>Start</Button>
             </Link>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default class Pipetting extends Component{
+export default class DefAssessment extends Component{
     render(){
         return(<container>
             <h1>Module Start!

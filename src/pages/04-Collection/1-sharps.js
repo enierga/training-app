@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import Header from '../../components/header';
+
 
 export default class Sharps extends Component{
     render(){
-        return(<container>
-            <h1>Module Start!
-            </h1>
-        </container>);
+        return(
+            <container>
+                <Header/>
+                <h1>Module Start!</h1>
+            </container>
+    );
     }
 }
 

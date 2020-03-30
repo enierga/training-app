@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Jumbotron, Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
-import well from "./old-well.png";
+import well from "../../components/white-old-well.svg";
 
 class Home extends Component {
     render() {
@@ -15,13 +15,13 @@ class Home extends Component {
                 <h1 class="display-3" style={{color: 'white', paddingLeft:"2%"}}>Biological Waste Disposal</h1>
                 <p class="lead" style={{color: 'white', paddingLeft:"2%", fontSize: "2em"}}>EHS Self Study Unit</p>
                 </Col>
-                <Col><img src={well} alt="Old Well" style={{float: "right", paddingRight:"25%"}}/></Col>
+                <Col><img src={well} alt="Old Well" style={{float: "right", paddingRight:"10%", width: "10em"}}/></Col>
               </Row>
             </Jumbotron> 
 
             {/*use Link on a button to proceed to next page  */}
             <Link to="/Start">
-            <Button variant='warning' block style={{color: 'white'}}>GET STARTED</Button>
+            <Button variant='warning' style={{color: 'white', float: "right"}}>GET STARTED</Button>
             </Link>
 
           </Container>

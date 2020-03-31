@@ -4,8 +4,23 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
 
-class Start extends Component{
-    render(){
+export default class Start extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            isButtonDisabled: true,
+        }
+    }
+
+    componentDidMount() {
+        /*
+        * I only set this timeout to be seconds here but copy this structure 
+        * and we can figure out how long to make the wait for each page later
+        */
+        setTimeout(() => this.setState({ isButtonDisabled: false}), 5000);
+    }
+
+    render() {
         return(
             <Container>
                 <Header/>
@@ -26,11 +41,10 @@ class Start extends Component{
                 </p>
                 <p>The procedures of this policy are consistent with applicable sections of the OSHA Bloodborne Pathogens Standard 29 CFR 1910.1030.
                 </p>
+
                 <Link to="/Def">
-                    <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
+                    <Button variant='warning' disabled={this.state.isButtonDisabled} style={{color: 'white', float: "right"}}>NEXT</Button>
                 </Link>
             </Container>);
     }
 }
-
-export default Start;

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 import well from "../../components/white-old-well.svg";
 
-class Home extends Component {
+export default class Home extends Component {
     render() {
         return (
           <Container>
@@ -28,5 +28,3 @@ class Home extends Component {
         );
     }
 }
-
-export default Home;

@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
@@ -12,8 +12,15 @@ export default class Definition extends Component{
                 <Header/>
                 <h1>Defining Laboratory-Generated Biohazard Waste</h1>
                 <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                All biohazard waste generated in UNC-CH research laboratories will be properly treated prior to its transfer and final burial in the landfill or incineration. This biohazard waste includes:                
                 </p>
+                <ListGroup style={{width:'80%', margin:'0 auto'}}>
+                    <ListGroup.Item>Materials contaminated or potentially contaminated during the manipulation or clean-up of material generated during research and/or teaching activities requiring biosafety level 1, 2, or 3 or animal or plant biosafety level 1, 2, or 3. Refer to your laboratory's Biological Hazards Registration section of the Laboratory Safety Plan (Schedule F) to identify these materials in your lab.</ListGroup.Item>
+                    <ListGroup.Item>Human liquid blood and body fluids</ListGroup.Item>
+                    <ListGroup.Item>Human tissue and anatomical remains</ListGroup.Item>
+                    <ListGroup.Item>Materials contaminated with human tissue or tissue cultures (primary and established) because these are handled at BSL-2</ListGroup.Item>
+                    <ListGroup.Item>Animal carcasses, body parts, blood, fluids and bedding from animals infected with BSL2 and BSL3 agents</ListGroup.Item>
+                </ListGroup>
                 <Link to="/Start">
                     <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
                 </Link>

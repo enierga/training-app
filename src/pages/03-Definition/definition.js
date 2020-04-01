@@ -24,7 +24,7 @@ export default class Definition extends Component{
                 <Link to="/Start">
                     <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
                 </Link>
-                <Link to="/DefAssess">
+                <Link to="/SampMC">
                     <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
                 </Link>
             </Container>

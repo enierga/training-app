@@ -7,7 +7,7 @@ import {
 import Home from './pages/01-Home/home'
 import Start from './pages/02-Start/start';
 import Definition from './pages/03-Definition/definition';
-import DefAssess from './pages/03-Definition/def-assessment';
+import SampMC from './pages/03-Definition/def-assessment';
 
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/Start" component={Start} />
             <Route exact path="/Def" component={Definition} />
-            <Route exact path="/DefAssess" component={DefAssess} />
+            <Route exact path="/SampMC" component={SampMC} />
           </Switch>
         </Router>
       </div>

@@ -6,6 +6,17 @@ import Header from '../../components/header';
 
 
 export default class Definition extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            isButtonDisabled: true,
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.setState({ isButtonDisabled: false}), 5000);
+    }
+
     render(){
         return(
             <Container>
@@ -25,7 +36,7 @@ export default class Definition extends Component{
                     <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
                 </Link>
                 <Link to="/SampMC">
-                    <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
+                    <Button variant='warning' disabled={this.state.isButtonDisabled} style={{color: 'white', float: "right"}}>NEXT</Button>
                 </Link>
             </Container>
         );

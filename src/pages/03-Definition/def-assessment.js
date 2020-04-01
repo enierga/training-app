@@ -41,7 +41,7 @@ export default class SampMC extends Component{
                 <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
             </Link>
             {/*Correct the link and add route*/}
-            <Link to="/DefAssess">
+            <Link to="/SampDnD">
                     <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
             </Link>
         </Container>) : (            

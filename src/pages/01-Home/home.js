@@ -20,8 +20,13 @@ export default class Home extends Component {
             </Jumbotron> 
 
             {/*use Link on a button to proceed to next page  */}
-            <Link to="/Start">
+            <Link to="/Policy">
             <Button variant='warning' style={{color: 'white', float: "right"}}>GET STARTED</Button>
+            </Link>
+
+            {/*Link to example question types*/}
+            <Link to="/SampMC">
+            <Button variant='outline-success'>Multiple-choice</Button>
             </Link>
 
           </Container>

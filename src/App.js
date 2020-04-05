@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/01-Home/home'
-import Start from './pages/02-Start/start';
-import Definition from './pages/03-Definition/definition';
-import SampMC from './pages/03-Definition/def-assessment';
+import Policy from './pages/02-Start/1-Policy';
+import Purpose from './pages/02-Start/2-Purpose';
+import Solids from './pages/03-Types/1-Solids'
+import Liquids from './pages/03-Types/2-Liquids'
+import Sharps from './pages/03-Types/3-Sharps'
+import Path from './pages/03-Types/4-Pathological'
+
+import Definition from './pages/03-Types/definition';
+import SampMC from './pages/03-Types/def-assessment';
 
 
 class App extends Component {
@@ -25,8 +27,19 @@ class App extends Component {
         <Router>
           {/* this is how itll know what page to render */}
           <Switch>
+            {/*01-Home*/}
             <Route exact path="/" component={Home} />
-            <Route exact path="/Start" component={Start} />
+            {/*02-Start*/}
+            <Route exact path="/Policy" component={Policy} />
+            <Route exact path="/Purpose" component={Purpose} />
+            <Route exact path="/" component={Home} />
+            {/*03-Types*/}
+            <Route exact path="/Solids" component={Solids} />
+            <Route exact path="/Liquids" component={Liquids} />
+            <Route exact path="/Sharps" component={Sharps} />
+            <Route exact path="/Path" component={Path} />
+
+
             <Route exact path="/Def" component={Definition} />
             <Route exact path="/SampMC" component={SampMC} />
           </Switch>

@@ -11,6 +11,9 @@ import Path from './pages/03-Types/4-Pathological'
 import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
 
+import SampDnD from './pages/03-Definition/samp-dnd';
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
 
 class App extends Component {
   render() {
@@ -42,6 +45,9 @@ class App extends Component {
 
             <Route exact path="/Def" component={Definition} />
             <Route exact path="/SampMC" component={SampMC} />
+            <DndProvider backend={Backend}>
+              <Route exact path="/SampDnD" component={SampDnD}/>
+            </DndProvider>
           </Switch>
         </Router>
       </div>

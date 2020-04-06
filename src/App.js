@@ -11,7 +11,7 @@ import Path from './pages/03-Types/4-Pathological'
 import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
 
-import SampDnD from './pages/03-Definition/samp-dnd';
+import SampDnD from './pages/03-Types/samp-dnd';
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 

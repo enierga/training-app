@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import { Container, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import Nav from './../../components/nav';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
 
-export default class Path extends Component{
+export default class Path extends Component {
     render() {
-        return(
+        return (
             <Container>
-                <Header/>
+                <Header />
                 <h1>Pathological</h1>
                 <p>
-                    Text                
+                    -animal or human organs, tissues, and body parts. Any
+                    of these may contain infectious agents. Waste materials from a
+                    biopsy procedure fall into this category.
                 </p>
-                <ListGroup style={{width:'80%', margin:'0 auto'}}>
-                    <ListGroup.Item>A</ListGroup.Item>
-                    <ListGroup.Item>B</ListGroup.Item>
-                    <ListGroup.Item>C</ListGroup.Item>
-                </ListGroup>
-                <br/>
+                <Row>
+                    <Col>
+                        <Image src="./Types-Images/path-mouse.jpg" rounded />
+                    </Col>
+                    <Col>
+                        <Image src="./Types-Images/path-organ.jpg" rounded />
+                    </Col>
+                </Row>
+
+                <br />
                 <Nav prev="Sharps" next="Path" />
             </Container>);
     }

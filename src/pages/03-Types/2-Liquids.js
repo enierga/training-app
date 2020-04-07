@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import { Container, ListGroup } from 'react-bootstrap';
+import { Container, ListGroup, Row, Col, Image } from 'react-bootstrap';
 import Nav from './../../components/nav';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
 
-export default class Liquids extends Component{
+export default class Liquids extends Component {
     render() {
-        return(
+        return (
             <Container>
-                <Header/>
+                <Header />
                 <h1>Liquids</h1>
                 <p>
-                    Text                
+                    -pourable wastes
                 </p>
-                <ListGroup style={{width:'80%', margin:'0 auto'}}>
-                    <ListGroup.Item>A</ListGroup.Item>
-                    <ListGroup.Item>B</ListGroup.Item>
-                    <ListGroup.Item>C</ListGroup.Item>
+                <ListGroup style={{ width: '80%', margin: '0 auto' }}>
+                    <ListGroup.Item>Body fluids, blood, or blood products</ListGroup.Item>
+                    <ListGroup.Item>Cell culture media and stocks</ListGroup.Item>
+                    <ListGroup.Item>Microbiological media and stocks</ListGroup.Item>
+                    <ListGroup.Item>Aspirated liquid waste</ListGroup.Item>
                 </ListGroup>
-                <br/>
+                <Row>
+                    <Col>
+                        <Image src="./Types-Images/liquids-stocks.jpg" rounded />
+                    </Col>
+                    <Col>
+                        <Image src="./Types-Images/liquids-blood.jpg" rounded />
+                    </Col>
+                </Row>
+
+                <br />
                 <Nav prev="Solids" next="Sharps" />
             </Container>);
     }

@@ -9,8 +9,24 @@ const style = {
   width: 400,
 }
 
-const Box = () => {
+const SampDnD = () => {
     {
+      let correctOrder = false
+      const checkOrder = (cards) =>{
+        // console.log(cards)
+        for(let i =1; i<=cards.length; i++){
+          if (cards[i-1].id != i){ 
+            console.log(correctOrder)
+            break
+          }else if(i>=cards.length){
+            correctOrder = true;
+            console.log(correctOrder)
+          }else{
+            continue
+          }
+        }
+      }
+      
       const [cards, setCards] = useState([
         {
           id: 2,
@@ -55,6 +71,7 @@ const Box = () => {
           )
         },
         [cards],
+        checkOrder(cards)
       )
       const renderCard = (card, index) => {
         return (
@@ -67,7 +84,7 @@ const Box = () => {
           />
         )
       }
-      return (
+      return correctOrder ? (
         <>
             <Container>
             <Header/>
@@ -86,8 +103,23 @@ const Box = () => {
             </Link>
             </Container>
         </>
+      ):(
+        <>
+            <Container>
+            <Header/>
+            <h1>Sample Drag and Drop: Sorting</h1>
+            <p>
+            This page is a sample of what a sorting drag and drop question would look like. Sorting the correct order should show the next button, otherwise it should not appear (working on this part next). 
+            </p>
+            <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
+            <br/><br/><br/>
+            <Link to="/SampMC">
+                <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
+            </Link>
+            </Container>
+        </>
       )
     }
   }
 
-export default Box
+export default SampDnD

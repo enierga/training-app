@@ -24,6 +24,11 @@ export default class Home extends Component {
             <Button variant='warning' style={{color: 'white', float: "right"}}>GET STARTED</Button>
             </Link>
 
+            {/*Temporary link to Disposal section */}
+            <Link to="/ProcessA">
+            <Button variant='success' style={{color: 'white'}}>EXAMPLE MODULE</Button>
+            </Link><br/><br/>
+
             {/*Link to example question types*/}
             <Link to="/SampMC">
             <Button variant='outline-success'>Multiple-choice</Button>

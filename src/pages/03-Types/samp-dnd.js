@@ -9,7 +9,7 @@ const style = {
   width: 400,
 }
 
-const SampDnD = () => {
+const SortingSampDnD = () => {
     {
       let correctOrder = false
       const checkOrder = (cards) =>{
@@ -122,4 +122,4 @@ const SampDnD = () => {
     }
   }
 
-export default SampDnD
+export default SortingSampDnD

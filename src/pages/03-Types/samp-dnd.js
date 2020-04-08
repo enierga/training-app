@@ -109,7 +109,7 @@ const SortingSampDnD = () => {
             <Header/>
             <h1>Sample Drag and Drop: Sorting</h1>
             <p>
-            This page is a sample of what a sorting drag and drop question would look like. Sorting the correct order should show the next button, otherwise it should not appear (working on this part next). 
+            This page is a sample of what a sorting drag and drop question would look like. Sorting the correct order should show the next button, otherwise it should not appear. 
             </p>
             <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
             <br/><br/><br/>

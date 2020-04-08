@@ -3,6 +3,8 @@ import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
+import Nav from './../../components/nav';
+
 
 export default class SampMC extends Component{
     constructor(props){
@@ -56,9 +58,10 @@ export default class SampMC extends Component{
                 <Button id='false' style={{backgroundColor:'#4B9CD3'}} onClick={this.clickHandler}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Button><br/><br/>
                 <Button id='false' style={{backgroundColor:'#4B9CD3'}} onClick={this.clickHandler}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Button><br/><br/>
                 <br/><br/><br/>
-                <Link to="/Def">
+                {/* <Link to="/Def">
                     <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-                </Link>
+                </Link> */}
+                <Nav prev="" next="SortingSampDnD" />
                 {/*Correct the link and add route*/}
             </Container>);
     }

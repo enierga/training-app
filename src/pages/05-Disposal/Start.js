@@ -11,7 +11,7 @@ export default class DisposalStart extends Component{
                 <Header/>
                 <h1 style={{}}>Waste Disposal</h1>
                 <br/>
-                <Nav prev="Purpose" next="Liquids" />
+                <Nav prev="" next="ProcessA" />
             </Container>);
     }
 }

@@ -32,7 +32,7 @@ export default class Home extends Component {
             {/*Link to example question types*/}
             <Link to="/SampMC">
             <Button variant='outline-success'>Multiple-choice</Button>
-            </Link>
+            </Link><br/><br/>
             <Link to="/SortingSampDnD">
             <Button variant='outline-success'>Sorting Drag n Drop</Button>
             </Link>

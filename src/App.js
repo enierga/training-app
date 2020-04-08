@@ -8,6 +8,19 @@ import Liquids from './pages/03-Types/2-Liquids'
 import Sharps from './pages/03-Types/3-Sharps'
 import Path from './pages/03-Types/4-Pathological'
 
+import DisposalStart from './pages/05-Disposal/Start'
+import ProcessA from './pages/05-Disposal/1A-Process'
+import ProcessB from './pages/05-Disposal/1B-Process'
+import DisUnacc from './pages/05-Disposal/2-Unacceptable'
+import AutocA from './pages/05-Disposal/3A-Autoclaving'
+import AutocB from './pages/05-Disposal/3B-Autoclaving'
+import Droso from './pages/05-Disposal/4-Drosophilia'
+import Carc from './pages/05-Disposal/5-Carcasses'
+import DPolicy from './pages/05-Disposal/6-Policy'
+import Injury from './pages/05-Disposal/7-Injury'
+
+
+
 import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
 
@@ -41,6 +54,18 @@ class App extends Component {
             <Route exact path="/Liquids" component={Liquids} />
             <Route exact path="/Sharps" component={Sharps} />
             <Route exact path="/Path" component={Path} />
+
+            {/*05-Disposal*/}
+            <Route exact path="/DisposalStart" component={DisposalStart} />
+            <Route exact path="/ProcessA" component={ProcessA} />
+            <Route exact path="/ProcessB" component={ProcessB} />
+            <Route exact path="/DisUnacc" component={DisUnacc} />
+            <Route exact path="/AutocA" component={AutocA} />
+            <Route exact path="/AutocB" component={AutocB} />
+            <Route exact path="/Droso" component={Droso} />
+            <Route exact path="/Carc" component={Carc} />
+            <Route exact path="/DPolicy" component={DPolicy} />
+            <Route exact path="/Injury" component={Injury} />
 
 
             <Route exact path="/Def" component={Definition} />

@@ -19,6 +19,8 @@ import Carc from './pages/05-Disposal/5-Carcasses'
 import DPolicy from './pages/05-Disposal/6-Policy'
 import Injury from './pages/05-Disposal/7-Injury'
 
+import End from './pages/06-End'
+
 
 
 import Definition from './pages/03-Types/definition';
@@ -67,6 +69,8 @@ class App extends Component {
             <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/Injury" component={Injury} />
 
+            {/* End */}
+            <Route exact path="/End" component={End} />
 
             <Route exact path="/Def" component={Definition} />
             <Route exact path="/SampMC" component={SampMC} />

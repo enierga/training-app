@@ -32,7 +32,7 @@ export default class AutocB extends Component{
                     </Card>
                 </div>
                 <br/>
-                <Nav prev="AutocA" next="SampMC" />
+                <Nav prev="AutocA" next="Droso" />
             </Container>);
     }
 }

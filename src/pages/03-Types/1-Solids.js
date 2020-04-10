@@ -11,7 +11,7 @@ export default class Solids extends Component{
                 <Header/>
                 <h1>Dry Solids</h1>
                 <p>
-                    -any non-sharp material that is contaminated with human or animal specimens, or pathogenic microorgramisms
+                    Any <u>non-sharp</u> material that is contaminated with human or animal specimens, or pathogenic microorgramisms
                 </p>
                 <ListGroup style={{width:'80%', margin:'0 auto'}}>
                     <ListGroup.Item>Personal protective equipment (PPE)</ListGroup.Item>
@@ -19,16 +19,12 @@ export default class Solids extends Component{
                     <ListGroup.Item>Cell culture flasks</ListGroup.Item>
                     <ListGroup.Item>Conical tubes</ListGroup.Item>
                     <ListGroup.Item>Plastic pipettes and tips</ListGroup.Item>
-                </ListGroup>
+                </ListGroup><br/>
                 <Row>
-                    <Col>
-                        <Image src="./Types-Images/solids-conicaltubes.jpg" rounded/>
-                    </Col>
-                    <Col>
-                        <Image src="./Types-Images/solids-petridish.jpg" rounded/>
-                    </Col>
-                    <Col>
-                        <Image src="./Types-Images/solids-ppe.jpg" rounded />
+                    <Col className="text-center my-auto">
+                        <Image src="./Types-Images/solids-conicaltubes.jpg" rounded style={{width:'15em', marginRight:"2em"}}/>
+                        <Image src="./Types-Images/solids-petridish.jpg" rounded style={{width:'15em', marginRight:"2em"}}/>
+                        <Image src="./Types-Images/solids-ppe.jpg" rounded style={{width:'8em'}}/>
                     </Col>
                 </Row>
                 <br/>

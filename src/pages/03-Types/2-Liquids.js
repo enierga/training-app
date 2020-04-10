@@ -11,20 +11,18 @@ export default class Liquids extends Component {
                 <Header />
                 <h1>Liquids</h1>
                 <p>
-                    -pourable wastes
+                    Pourable wastes
                 </p>
                 <ListGroup style={{ width: '80%', margin: '0 auto' }}>
                     <ListGroup.Item>Body fluids, blood, or blood products</ListGroup.Item>
                     <ListGroup.Item>Cell culture media and stocks</ListGroup.Item>
                     <ListGroup.Item>Microbiological media and stocks</ListGroup.Item>
                     <ListGroup.Item>Aspirated liquid waste</ListGroup.Item>
-                </ListGroup>
+                </ListGroup><br/>
                 <Row>
-                    <Col>
-                        <Image src="./Types-Images/liquids-stocks.jpg" rounded />
-                    </Col>
-                    <Col>
-                        <Image src="./Types-Images/liquids-blood.jpg" rounded />
+                    <Col className="text-center my-auto">
+                        <Image src="./Types-Images/liquids-stocks.jpg" rounded style={{width:'16em', marginRight:"2em"}}/>
+                        <Image src="./Types-Images/liquids-blood.jpg" rounded style={{width:'6em'}} />
                     </Col>
                 </Row>
 

@@ -11,21 +11,19 @@ export default class Path extends Component {
                 <Header />
                 <h1>Pathological</h1>
                 <p>
-                    -animal or human organs, tissues, and body parts. Any
+                    Animal or human organs, tissues, and body parts. Any
                     of these may contain infectious agents. Waste materials from a
                     biopsy procedure fall into this category.
                 </p>
                 <Row>
-                    <Col>
-                        <Image src="./Types-Images/path-mouse.jpg" rounded />
-                    </Col>
-                    <Col>
-                        <Image src="./Types-Images/path-organ.jpg" rounded />
+                    <Col className="text-center my-auto">
+                        <Image src="./Types-Images/path-mouse.jpg" rounded style={{width:'15em', marginRight:"1em"}}/>
+                        <Image src="./Types-Images/path-organ.jpg" rounded style={{width:'15em'}}/>
                     </Col>
                 </Row>
 
                 <br />
-                <Nav prev="Sharps" next="Path" />
+                <Nav prev="Sharps" next="Primary" />
             </Container>);
     }
 }

@@ -8,6 +8,7 @@ import Solids from './pages/03-Types/1-Solids'
 import Liquids from './pages/03-Types/2-Liquids'
 import Sharps from './pages/03-Types/3-Sharps'
 import Path from './pages/03-Types/4-Pathological'
+import Mixed from './pages/03-Types/5-Mixed'
 
 import Primary from './pages/04-Collection/1-Solids/1-Primary'
 import Secondary from './pages/04-Collection/1-Solids/2-Secondary'
@@ -63,6 +64,7 @@ class App extends Component {
             <Route exact path="/Liquids" component={Liquids} />
             <Route exact path="/Sharps" component={Sharps} />
             <Route exact path="/Path" component={Path} />
+            <Route exact path="/Mixed" component={Mixed} />
             {/* 04-Collection */}
             <Route exact path="/Primary" component={Primary} />
             <Route exact path="/Secondary" component={Secondary} />

@@ -23,7 +23,7 @@ export default class Path extends Component {
                 </Row>
 
                 <br />
-                <Nav prev="Sharps" next="Primary" />
+                <Nav prev="Sharps" next="Mixed" />
             </Container>);
     }
 }

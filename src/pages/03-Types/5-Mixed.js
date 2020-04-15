@@ -24,7 +24,7 @@ export default class Mixed extends Component {
                 </Row>
 
                 <br />
-                <Nav prev="Path" next="Primary" />
+                <Nav prev="Path" next="TypesQ1" />
             </Container>);
     }
 }

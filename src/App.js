@@ -25,6 +25,11 @@ import LiqUnacc from './pages/04-Collection/3-Liquids/3-Unacceptable'
 import SharpsGen from './pages/04-Collection/4-Sharps/1-General'
 import Contam from './pages/04-Collection/4-Sharps/2-Contaminated'
 import SharpsUnacc from './pages/04-Collection/4-Sharps/3-Unacceptable'
+import CollectionQ1 from './pages/04-Collection/5-Q1'
+import CollectionQ2 from './pages/04-Collection/6-Q2'
+import CollectionQ3 from './pages/04-Collection/7-Q3'
+import CollectionQ4 from './pages/04-Collection/8-Q4'
+import CollectionQ5 from './pages/04-Collection/9-Q5'
 
 import DisposalStart from './pages/05-Disposal/Start'
 import ProcessA from './pages/05-Disposal/1A-Process'
@@ -104,6 +109,11 @@ class App extends Component {
             <Route exact path="/SharpsGen" component={SharpsGen} />
             <Route exact path="/Contam" component={Contam} />
             <Route exact path="/SharpsUnacc" component={SharpsUnacc} />
+            <Route exact path="/CollectionQ1" component={CollectionQ1} />
+            <Route exact path="/CollectionQ2" component={CollectionQ2} />
+            <Route exact path="/CollectionQ3" component={CollectionQ3} />
+            <Route exact path="/CollectionQ4" component={CollectionQ4} />
+            <Route exact path="/CollectionQ5" component={CollectionQ5} />
             {/*05-Disposal*/}
             <Route exact path="/DisposalStart" component={DisposalStart} />
             <Route exact path="/ProcessA" component={ProcessA} />

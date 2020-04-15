@@ -22,7 +22,7 @@ export default class SharpsUnacc extends Component{
                     <Col className="text-center">Over flowing sharps container</Col>
                 </Row>
                 <br/>
-                <Nav prev="Contam" next="ProcessA" />
+                <Nav prev="Contam" next="CollectionQ1" />
             </Container>);
     }
 }

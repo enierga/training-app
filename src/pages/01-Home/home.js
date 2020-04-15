@@ -54,6 +54,9 @@ export default class Home extends Component {
         </Link><br /><br />
         <Link to="/SortingSampDnD">
           <Button variant='outline-success'>Sorting Drag n Drop</Button>
+        </Link><br /><br />
+        <Link to="/BucketSampDnD">
+          <Button variant='outline-success'>Bucket Drag n Drop</Button>
         </Link>
 
       </Container>

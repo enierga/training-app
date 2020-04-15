@@ -50,6 +50,7 @@ import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
 
 import SortingSampDnD from './pages/03-Types/samp-dnd';
+import BucketSampDnD from './components/bucketdnd';
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 
@@ -132,6 +133,7 @@ class App extends Component {
             <Route exact path="/SampMC" component={SampMC} />
             <DndProvider backend={Backend}>
               <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
+              <Route exact path="/BucketSampDnD" component={BucketSampDnD}/>
             </DndProvider>
           </Switch>
         </Router>

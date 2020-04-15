@@ -37,7 +37,7 @@ import Injury from './pages/05-Disposal/7-Injury'
 
 import End from './pages/06-End'
 
-
+import testing from './pages/testing'
 
 import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
@@ -53,6 +53,8 @@ class App extends Component {
       <div className='App' >
         <Router>
           <Switch>
+            <Route exact path="/testing" component={testing}/>
+
             {/*01-Home*/}
             <Route exact path="/" component={Home} />
             {/*02-Start*/}

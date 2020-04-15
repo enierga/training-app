@@ -40,11 +40,11 @@ export default class MultChoice extends Component {
                     <Card.Header>Question {this.props.index} of {this.props.total}</Card.Header>
                     <Card.Body>
                         <h3>{this.props.question}</h3><br/>
-                        <Button id={this.props.boolA} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolA == "true" ? "success" : "secondary"} onClick={this.clickHandler}><Badge pill variant="light">A</Badge> {this.props.ansA}</Button><br/><br/>
-                        <Button id={this.props.boolB} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolB == "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">B</Badge> {this.props.ansB}</Button><br/><br/>
-                        <Button id={this.props.boolC} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolC == "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">C</Badge> {this.props.ansC}</Button><br/><br/>
-                        <Button id={this.props.boolD} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolD == "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">D</Badge> {this.props.ansD}</Button><br/><br/>
-                        <Button id={this.props.boolE} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolE == "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">E</Badge> {this.props.ansE}</Button><br/><br/>
+                        <Button id={this.props.boolA} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolA === "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">A</Badge> {this.props.ansA}</Button><br/><br/>
+                        <Button id={this.props.boolB} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolB === "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">B</Badge> {this.props.ansB}</Button><br/><br/>
+                        <Button id={this.props.boolC} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolC === "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">C</Badge> {this.props.ansC}</Button><br/><br/>
+                        <Button id={this.props.boolD} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolD === "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">D</Badge> {this.props.ansD}</Button><br/><br/>
+                        <Button id={this.props.boolE} style={{width: '100%', 'text-align':'left'}} variant={this.props.boolE === "true" ? "success" : "light"} onClick={this.clickHandler}><Badge pill variant="dark">E</Badge> {this.props.ansE}</Button><br/><br/>
                     </Card.Body>
                 </Card> <br/><br/>
                 <div>

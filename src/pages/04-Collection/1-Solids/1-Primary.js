@@ -21,7 +21,7 @@ export default class Primary extends Component{
                     </Col>
                 </Row>
                 <br/>
-                <Nav prev="Path" next="Secondary" />
+                <Nav prev="TypesQ2" next="Secondary" />
             </Container>);
     }
 }

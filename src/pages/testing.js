@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import Nav from './../components/nav';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../components/header';
 import MultChoice from "./../components/MultChoice";
@@ -29,10 +28,7 @@ export default class testing extends Component {
                     boolE="false"
                     ansE="no"
                     />
-
-
                 <br />
-                {/* <Nav prev="" next="" /> */}
             </Container>);
     }
 }

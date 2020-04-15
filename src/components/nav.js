@@ -20,7 +20,7 @@ export default class Nav extends Component {
         setTimeout(() => this.setState({ isButtonDisabled: false }), time + 1000);
 
         const timer = setInterval(function () {
-            document.querySelector('#timeLeft').textContent = (time / 1000) + " ";
+            document.querySelector('#timeLeft').textContent = " " + (time / 1000) + " ";
             if (time <= 0) {
                 document.querySelector('#nextButton').textContent = "NEXT";
                 clearInterval(timer);
@@ -41,7 +41,7 @@ export default class Nav extends Component {
                 <Link to={`/${this.props.next}`}>
                     <Button id="nextButton" variant='warning' disabled={this.state.isButtonDisabled} style={{ color: 'white', float: "right" }}>
                         <Spinner animation="border" variant="info" size="sm"/> 
-                        <span id="timeLeft"></span>
+                        <span id="timeLeft"></span> 
                          seconds left
                          </Button>
                 </Link>

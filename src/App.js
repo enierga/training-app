@@ -47,6 +47,25 @@ import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 
 class App extends Component {
+
+  // componentDidMount() {
+  //   this.audio = new Audio("./Audio/default.mp3");
+  //   this.audio.load();
+  //   this.playAudio();
+  // }
+
+  // playAudio() {
+  //   const audioPromise = this.audio.play();
+  //   if(audioPromise !== undefined) {
+  //     audioPromise.then(_ => {
+  //       // autoplay audio
+  //     }).catch(err => {
+  //       // some error is thrown idk why it would tho
+  //       console.log(err);
+  //     });
+  //   }
+  // }
+
   render() {
     return (
 

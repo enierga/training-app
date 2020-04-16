@@ -30,32 +30,32 @@ const SortingSampDnD = () => {
       const [cards, setCards] = useState([
         {
           id: 2,
-          text: 'Step 2',
+          text: 'Line the red, durable, and leak proof biohazard container with the biohazard bag',
         },
         {
           id: 1,
-          text: 'Step 1',
+          text: 'Place an “X” with autoclave tape over the biohazard symbol on the biohazard bag',
         },
         {
           id: 7,
-          text: 'Step 7',
+          text: 'Remove bags and place in large containers labeled “Autoclaved”',
         },
         {
           id: 5,
-          text: 'Step 5',
+          text: 'Place in leakproof secondary container',
         },
         {
           id: 3,
           text:
-            'Step 3',
+            'Remove bags when they are 2/3 full',
         },
         {
           id: 6,
-          text: 'Step 6',
+          text: 'Autoclave biohazard waste using appropriate protocols',
         },
         {
           id: 4,
-          text: 'Step 4',
+          text: 'Loosely close the bags to allow for steam penetration',
         },
       ])
       const moveCard = useCallback(
@@ -88,9 +88,9 @@ const SortingSampDnD = () => {
         <>
             <Container>
             <Header/>
-            <h1>Sample Drag and Drop: Sorting</h1>
+            <h1>Biohazard Sorting Question</h1>
             <p>
-            This page is a sample of what a sorting drag and drop question would look like. Sorting the correct order should show the next button, otherwise it should not appear (working on this part next). 
+            Sort these lab requirements by level of importance: (Press Next) 
             </p>
             <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
             <br/><br/><br/>
@@ -107,9 +107,9 @@ const SortingSampDnD = () => {
         <>
             <Container>
             <Header/>
-            <h1>Sample Drag and Drop: Sorting</h1>
+            <h1>Biohazard Sorting Question</h1>
             <p>
-            This page is a sample of what a sorting drag and drop question would look like. Sorting the correct order should show the next button, otherwise it should not appear. 
+            Sort these lab requirements by level of importance:
             </p>
             <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
             <br/><br/><br/>

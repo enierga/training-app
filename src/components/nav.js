@@ -17,15 +17,17 @@ export default class Nav extends Component {
         * and we can figure out how long to make the wait for each page later
         */
         var time = 5000;
-        setTimeout(() => this.setState({ isButtonDisabled: false }), time + 1000);
+        setTimeout(() => this.setState({ isButtonDisabled: false }), time);
 
         const timer = setInterval(function () {
-            document.querySelector('#timeLeft').textContent = " " + (time / 1000) + " ";
+            if (document.body.contains(document.getElementById('timeLeft'))) {
+                document.querySelector('#timeLeft').textContent = " " + ((time / 1000) - 1) + " ";
+            }
+            time -= 1000;
             if (time <= 0) {
                 document.querySelector('#nextButton').textContent = "NEXT";
                 clearInterval(timer);
             }
-            time -= 1000;
         }, 1000)
     }
 
@@ -40,8 +42,8 @@ export default class Nav extends Component {
 
                 <Link to={`/${this.props.next}`}>
                     <Button id="nextButton" variant='warning' disabled={this.state.isButtonDisabled} style={{ color: 'white', float: "right" }}>
-                        <Spinner animation="border" variant="info" size="sm"/> 
-                        <span id="timeLeft"></span> 
+                        <Spinner animation="border" variant="info" size="sm" />
+                        <span id="timeLeft"> 5 </span>
                          seconds left
                          </Button>
                 </Link>

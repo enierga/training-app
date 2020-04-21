@@ -19,15 +19,19 @@ const columnsFromBackend = {
     items: itemsFromBackend
   },
   [uuid()]: {
-    name: "Sharps",
+    name: "Biohazard Waste",
     items: []
   },
   [uuid()]: {
-    name: "Biological waste",
+    name: "Glass",
     items: []
   },
   [uuid()]: {
-    name: "Trashbag",
+    name: "Exposed Sharps",
+    items: []
+  },
+  [uuid()]: {
+    name: "Trash Bin",
     items: []
   }
 };

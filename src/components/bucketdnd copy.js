@@ -9,7 +9,7 @@ import update from 'immutability-helper'
 
 const itemsFromBackend = [
   { id: uuid(), content: "Contaminated Empty Broken Glass Beaker" },
-  { id: uuid(), content: "Glass Tubes of Blood" },
+  { id: uuid(), content: "Glass Tube of Blood" },
   { id: uuid(), content: "Contaminated Glove" }
 ];
 
@@ -19,15 +19,19 @@ const columnsFromBackend = {
     items: itemsFromBackend
   },
   [uuid()]: {
-    name: "Sharps",
+    name: "Biohazard Waste",
     items: []
   },
   [uuid()]: {
-    name: "Biological waste",
+    name: "Glass",
     items: []
   },
   [uuid()]: {
-    name: "Trashbag",
+    name: "Exposed Sharps",
+    items: []
+  },
+  [uuid()]: {
+    name: "Trash Bin",
     items: []
   }
 };

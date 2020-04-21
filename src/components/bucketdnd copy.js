@@ -8,11 +8,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import update from 'immutability-helper'
 
 const itemsFromBackend = [
-  { id: uuid(), content: "Pippettes" },
-  { id: uuid(), content: "Animal Carcasses" },
-  { id: uuid(), content: "Contaminated Bedding" },
-  { id: uuid(), content: "Broken Lab Material" },
-  { id: uuid(), content: "Food Waste" }
+  { id: uuid(), content: "Contaminated Empty Broken Glass Beaker" },
+  { id: uuid(), content: "Glass Tubes of Blood" },
+  { id: uuid(), content: "Contaminated Glove" }
 ];
 
 const columnsFromBackend = {
@@ -71,14 +69,12 @@ const onDragEnd = (result, columns, setColumns) => {
   }
 };
 
-function BucketSampDnD() {
+function BucketSampDnD2() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
     <div>
-
       <Header/>
-        <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #1:  Put the items in the correct containers.</p>
-        
+        <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #2:  Put the items in the correct containers.</p>
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       
         <DragDropContext
@@ -149,17 +145,14 @@ function BucketSampDnD() {
                     }}
                   </Droppable>
                 </div>
-                
               </div>
-            
           );
         })}
       </DragDropContext>
-      <br></br><br></br>
-      <Link to="/SortingSampDnD">
+      <Link to="/BucketSampDnD">
         <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-      </Link><br></br><br></br>
-      <Link to="/BucketSampDnD2">
+      </Link>
+      <Link to="/BucketSampDnD3">
         <Button variant='warning' style={{color: 'white'}}>NEXT</Button>
       </Link>
     </div>
@@ -167,4 +160,4 @@ function BucketSampDnD() {
   );
 }
 
-export default BucketSampDnD;
+export default BucketSampDnD2;

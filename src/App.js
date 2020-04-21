@@ -51,8 +51,14 @@ import SampMC from './pages/03-Types/def-assessment';
 
 import SortingSampDnD from './pages/03-Types/samp-dnd';
 import BucketSampDnD from './components/bucketdnd';
+import BucketSampDnD2 from './components/bucketdnd copy';
+import BucketSampDnD3 from './components/bucketdnd copy 2';
+import BucketSampDnD4 from './components/bucketdnd copy 3';
+import BucketSampDnD5 from './components/bucketdnd copy 4';
+import BucketSampDnD6 from './components/bucketdnd copy 5';
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
+import FTB from './pages/03-Types/FTB';
 
 class App extends Component {
 
@@ -134,6 +140,11 @@ class App extends Component {
             <DndProvider backend={Backend}>
               <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
               <Route exact path="/BucketSampDnD" component={BucketSampDnD}/>
+              <Route exact path="/BucketSampDnD2" component={BucketSampDnD2}/>
+              <Route exact path="/BucketSampDnD3" component={BucketSampDnD3}/>
+              <Route exact path="/BucketSampDnD4" component={BucketSampDnD4}/>
+              <Route exact path="/BucketSampDnD5" component={BucketSampDnD5}/>
+              <Route exact path="/BucketSampDnD6" component={BucketSampDnD6}/>
             </DndProvider>
           </Switch>
         </Router>

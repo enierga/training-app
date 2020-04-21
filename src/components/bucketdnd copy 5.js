@@ -8,11 +8,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import update from 'immutability-helper'
 
 const itemsFromBackend = [
-  { id: uuid(), content: "Pippettes" },
-  { id: uuid(), content: "Animal Carcasses" },
-  { id: uuid(), content: "Contaminated Bedding" },
-  { id: uuid(), content: "Broken Lab Material" },
-  { id: uuid(), content: "Food Waste" }
+  { id: uuid(), content: "Pippette Wrappers" },
+  { id: uuid(), content: "Contaminated Razor" },
+  { id: uuid(), content: "Contaminated Needle" }
 ];
 
 const columnsFromBackend = {
@@ -21,15 +19,19 @@ const columnsFromBackend = {
     items: itemsFromBackend
   },
   [uuid()]: {
-    name: "Sharps",
+    name: "Biohazard Waste",
     items: []
   },
   [uuid()]: {
-    name: "Biological waste",
+    name: "Glass",
     items: []
   },
   [uuid()]: {
-    name: "Trashbag",
+    name: "Exposed Sharps",
+    items: []
+  },
+  [uuid()]: {
+    name: "Trash Bin",
     items: []
   }
 };
@@ -71,14 +73,12 @@ const onDragEnd = (result, columns, setColumns) => {
   }
 };
 
-function BucketSampDnD() {
+function BucketSampDnD6() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
     <div>
-
       <Header/>
-        <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #1:  Put the items in the correct containers.</p>
-        
+        <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #6:  Put the items in the correct containers.</p>
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       
         <DragDropContext
@@ -156,10 +156,10 @@ function BucketSampDnD() {
         })}
       </DragDropContext>
       <br></br><br></br>
-      <Link to="/SortingSampDnD">
+      <Link to="/BucketSampDnd5">
         <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
       </Link><br></br><br></br>
-      <Link to="/BucketSampDnD2">
+      <Link to="/">
         <Button variant='warning' style={{color: 'white'}}>NEXT</Button>
       </Link>
     </div>
@@ -167,4 +167,4 @@ function BucketSampDnD() {
   );
 }
 
-export default BucketSampDnD;
+export default BucketSampDnD6;

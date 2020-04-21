@@ -57,7 +57,10 @@ export default class Home extends Component {
         </Link><br /><br />
         <Link to="/BucketSampDnD">
           <Button variant='outline-success'>Bucket Drag n Drop</Button>
-        </Link>
+        </Link><br /><br />
+        {/* <Link to="/FTB">
+          <Button variant='outline-success'>Fill in the Blank</Button>
+        </Link> */}
 
       </Container>
     );

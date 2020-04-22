@@ -25,7 +25,7 @@ export default class Injury extends Component{
                     </Col>
                 </Row>
                 <br/>
-                <Nav prev="DPolicy" next="End" />
+                <Nav prev="DPolicy" next="SortingSampDND" />
             </Container>);
     }
 }

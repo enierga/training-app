@@ -31,7 +31,6 @@ import CollectionQ3 from './pages/04-Collection/7-Q3'
 import CollectionQ4 from './pages/04-Collection/8-Q4'
 import CollectionQ5 from './pages/04-Collection/9-Q5'
 
-import DisposalStart from './pages/05-Disposal/Start'
 import ProcessA from './pages/05-Disposal/1A-Process'
 import ProcessB from './pages/05-Disposal/1B-Process'
 import DisUnacc from './pages/05-Disposal/2-Unacceptable'
@@ -49,7 +48,7 @@ import testing from './pages/testing'
 import Definition from './pages/03-Types/definition';
 import SampMC from './pages/03-Types/def-assessment';
 
-import SortingSampDnD from './pages/03-Types/samp-dnd';
+import SortingSampDnD from './pages/05-Disposal/samp-dnd';
 import BucketSampDnD from './components/bucketdnd';
 import BucketSampDnD2 from './pages/03-Types/bucketdnd copy';
 import BucketSampDnD3 from './pages/03-Types/bucketdnd copy 2';
@@ -122,7 +121,6 @@ class App extends Component {
             <Route exact path="/CollectionQ4" component={CollectionQ4} />
             <Route exact path="/CollectionQ5" component={CollectionQ5} />
             {/*05-Disposal*/}
-            <Route exact path="/DisposalStart" component={DisposalStart} />
             <Route exact path="/ProcessA" component={ProcessA} />
             <Route exact path="/ProcessB" component={ProcessB} />
             <Route exact path="/DisUnacc" component={DisUnacc} />

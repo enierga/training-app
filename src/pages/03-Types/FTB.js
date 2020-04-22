@@ -3,7 +3,6 @@ import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
-import Card from './Card'
 import update from 'immutability-helper'
 const style = {
   width: 400,

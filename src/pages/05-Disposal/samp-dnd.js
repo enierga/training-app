@@ -3,7 +3,7 @@ import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
-import Card from './Card'
+import Card from '../05-Disposal/Card'
 import update from 'immutability-helper'
 const style = {
   width: 400,
@@ -94,11 +94,11 @@ const SortingSampDnD = () => {
             </p>
             <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
             <br/><br/><br/>
-            <Link to="/SampMC">
+            <Link to="/Injury">
                 <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
             </Link>
             {/*Correct the link and add route*/}
-            <Link to="/">
+            <Link to="/End">
                     <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
             </Link>
             </Container>
@@ -109,11 +109,11 @@ const SortingSampDnD = () => {
             <Header/>
             <h1>Biohazard Sorting Question</h1>
             <p>
-            Sort these lab requirements by level of importance:
+            Sort the following procedures into the current order:
             </p>
             <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
             <br/><br/><br/>
-            <Link to="/SampMC">
+            <Link to="/Injury">
                 <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
             </Link>
             </Container>

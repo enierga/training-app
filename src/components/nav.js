@@ -45,8 +45,15 @@ export default class Nav extends Component {
                     <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
                 </Link>
 
-                <Link to={`/${this.props.next}`}>
+                {/* <Link to={`/${this.props.next}`}>
                     <Button id="nextButton" variant='warning' disabled={this.state.isButtonDisabled} style={{ color: 'white', float: "right" }}>
+                        <Spinner animation="border" variant="info" size="sm" />
+                        <span id="timeLeft"> 5 </span>
+                         seconds left
+                         </Button>
+                </Link> */}
+                <Link to={`/${this.props.next}`}>
+                    <Button id="nextButton" variant='warning' style={{ color: 'white', float: "right" }}>
                         <Spinner animation="border" variant="info" size="sm" />
                         <span id="timeLeft"> 5 </span>
                          seconds left

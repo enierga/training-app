@@ -10,7 +10,7 @@ export default class CollectionQ1 extends Component {
             <Container>
                 <Header/>
                 <h1>Waste Collection</h1>
-                <p>Choose true or false fool</p>
+                <p>Click on the correct answer to proceed.</p>
                 <TrueFalse
                 prev="SharpsUnacc"
                 next="CollectionQ2"

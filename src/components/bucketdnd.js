@@ -5,7 +5,6 @@ import Nav from './nav';
 import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
-let correctOrder = false;
 
 const itemsFromBackend = [
   //wID=  waste ID. What type of waste it should be
@@ -36,35 +35,31 @@ const columnsFromBackend = {
 };
 
 const checkPlacement = () => {
-  console.log(correctOrder)
   if(columnsFromBackend.waste.items[0] != null){
   }
   else{
     if(columnsFromBackend.sharps.items[0] != null){
       for(let i = 0; i<columnsFromBackend.sharps.items.length; i++){
         if(columnsFromBackend.sharps.items[i].wID != 'Sharps'){
-          correctOrder = false;
-          return ;
+          return false;
         }
       }
     }
     if(columnsFromBackend.biowaste.items[0] != null){
       for(let i = 0; i<columnsFromBackend.biowaste.items.length; i++){
         if(columnsFromBackend.biowaste.items[i].wID != 'Biowaste'){
-          correctOrder = false;
-          return ;
+          return false;
         }
       }
     }
     if(columnsFromBackend.trashbag.items[0] != null){  
       for(let i = 0; i<columnsFromBackend.trashbag.items.length; i++){
         if(columnsFromBackend.trashbag.items[i].wID != 'Trashbag'){
-          correctOrder = false;
-          return ;
+          return false;
         }
       }
     }
-    correctOrder= true;
+    return true;
   }
 }
 
@@ -182,7 +177,8 @@ const onDragEnd = (result, columns, setColumns) => {
 function BucketSampDnD() {
   // checkPlacement();
   const [columns, setColumns] = useState(columnsFromBackend);
-  return correctOrder ? (
+  const [order, correctOrder] = useState(false);
+  return order ? (
     <div>
       <Header/>
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
@@ -346,7 +342,7 @@ function BucketSampDnD() {
 <Link to="/SampMC">
             <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
 </Link>
-<Button variant= 'warning' style={{color: 'white',float: 'right'}} onClick={checkPlacement}> Submit </Button>
+<Button variant= 'warning' style={{color: 'white',float: 'right'}} onClick={() => correctOrder(checkPlacement())}> Submit </Button>
 </div>
 ); 
 }

@@ -8,6 +8,7 @@ export default class Nav extends Component {
         super(props);
         this.state = {
             isButtonDisabled: true,
+            timer: null,
         }
     }
 
@@ -29,9 +30,13 @@ export default class Nav extends Component {
                 clearInterval(timer);
             }
         }, 1000)
+
+        this.setState({timer: timer});
     }
 
-
+    componentWillUnmount() {
+        clearInterval(this.state.timer);
+    }
 
     render() {
         return (

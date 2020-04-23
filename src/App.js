@@ -40,6 +40,19 @@ import Droso from './pages/05-Disposal/4-Drosophilia'
 import Carc from './pages/05-Disposal/5-Carcasses'
 import DPolicy from './pages/05-Disposal/6-Policy'
 import Injury from './pages/05-Disposal/7-Injury'
+import BrokenGlassDnD from './pages/05-Disposal/DnD1-BrokenGlass';
+import PasteurPipettesDnD from './pages/05-Disposal/DnD2-PasteurPipettes';
+import BloodTubeDnD from './pages/05-Disposal/DnD3-BloodTube';
+import PPEDnD from './pages/05-Disposal/DnD4-PPE';
+import PipTipsDnD from './pages/05-Disposal/DnD5-PipTips';
+import PlatesDnD from './pages/05-Disposal/DnD6-Plates';
+import TubesDnD from './pages/05-Disposal/DnD7-Tubes';
+import FlasksDnD from './pages/05-Disposal/DnD8-Flasks';
+import SerolDnD from './pages/05-Disposal/DnD9-Serological'
+import WrapDnD from './pages/05-Disposal/DnD10-Wrappers'
+import NeedleDnD from './pages/05-Disposal/DnD11-Needles'
+
+
 
 import End from './pages/06-End'
 
@@ -50,11 +63,7 @@ import SampMC from './pages/03-Types/def-assessment';
 
 import SortingSampDnD from './pages/05-Disposal/samp-dnd';
 import BucketSampDnD from './components/bucketdnd';
-import BucketSampDnD2 from './pages/03-Types/bucketdnd copy';
-import BucketSampDnD3 from './pages/03-Types/bucketdnd copy 2';
-import BucketSampDnD4 from './pages/03-Types/bucketdnd copy 3';
-import BucketSampDnD5 from './pages/03-Types/bucketdnd copy 4';
-import BucketSampDnD6 from './pages/03-Types/bucketdnd copy 5';
+
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 import FTB from './pages/03-Types/FTB';
@@ -130,6 +139,19 @@ class App extends Component {
             <Route exact path="/Carc" component={Carc} />
             <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/Injury" component={Injury} />
+            <DndProvider backend={Backend}>
+            <Route exact path="/DnD1" component={BrokenGlassDnD}/>
+            <Route exact path="/DnD2" component={PasteurPipettesDnD}/>
+            <Route exact path="/DnD3" component={BloodTubeDnD}/>
+            <Route exact path="/DnD4" component={PPEDnD}/>
+            <Route exact path="/DnD5" component={PipTipsDnD}/>
+            <Route exact path="/DnD6" component={PlatesDnD}/>
+            <Route exact path="/DnD7" component={TubesDnD}/>
+            <Route exact path="/DnD8" component={FlasksDnD}/>
+            <Route exact path="/DnD9" component={SerolDnD}/>
+            <Route exact path="/DnD10" component={WrapDnD}/>
+            <Route exact path="/DnD11" component={NeedleDnD}/>
+            </DndProvider>
             {/* End */}
             <Route exact path="/End" component={End} />
 
@@ -138,11 +160,6 @@ class App extends Component {
             <DndProvider backend={Backend}>
               <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
               <Route exact path="/BucketSampDnD" component={BucketSampDnD}/>
-              <Route exact path="/BucketSampDnD2" component={BucketSampDnD2}/>
-              <Route exact path="/BucketSampDnD3" component={BucketSampDnD3}/>
-              <Route exact path="/BucketSampDnD4" component={BucketSampDnD4}/>
-              <Route exact path="/BucketSampDnD5" component={BucketSampDnD5}/>
-              <Route exact path="/BucketSampDnD6" component={BucketSampDnD6}/>
               <Route exact path="/FTB" component={FTB}/>
             </DndProvider>
           </Switch>

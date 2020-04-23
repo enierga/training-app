@@ -20,6 +20,10 @@ const columnsFromBackend = {
     name: "Waste",
     items: itemsFromBackend
   },
+  glass:{
+    name: "Glass",
+    items: []
+  },
   sharps: {
     name: "Sharps",
     items: []
@@ -339,7 +343,7 @@ function BucketSampDnD() {
     })}
   </DragDropContext>
 </div>
-<Link to="/SampMC">
+<Link to="/Injury">
             <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
 </Link>
 <Button variant= 'warning' style={{color: 'white',float: 'right'}} onClick={() => correctOrder(checkPlacement())}> Submit </Button>

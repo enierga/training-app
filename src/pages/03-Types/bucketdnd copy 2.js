@@ -153,7 +153,7 @@ function BucketSampDnD3() {
           );
         })}
       </DragDropContext>
-      <Link to="/SortingSampDnD2">
+      <Link to="/BucketSampDnd2">
         <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
       </Link><br></br><br></br>
       <Link to="/BucketSampDnd4">

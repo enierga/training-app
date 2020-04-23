@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from '../../components/header';
-import {Button} from 'react-bootstrap';
+import {Button, Image} from 'react-bootstrap';
 import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
@@ -160,6 +160,7 @@ function SerolDnD() {
                                     ...provided.draggableProps.style
                                   }}
                                 >
+                                  <Image src="./Types-Images/Serological.jpg" rounded style={{width:"10em"}}></Image>
                                   {item.content}
                                 </div>
                               );
@@ -241,6 +242,7 @@ function SerolDnD() {
                                     ...provided.draggableProps.style
                                   }}
                                 >
+                                  <Image src="./Types-Images/Serological.jpg" rounded style={{width:"10em"}}></Image>
                                   {item.content}
                                 </div>
                               );

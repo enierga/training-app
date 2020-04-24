@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from '../../components/header';
-import {Button, Image, Card, Container} from 'react-bootstrap';
+import { Button, Image, Card, Container } from 'react-bootstrap';
 import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ let order = false;
 
 const itemsFromBackend = [
   //wID=  waste ID. What type of waste it should be,
-  { id: 'broken', content: "Broken Lab Material"},
+  { id: 'broken', content: "Broken Lab Material" },
 ];
 
 const columnsFromBackend = {
@@ -19,7 +19,7 @@ const columnsFromBackend = {
     items: itemsFromBackend,
     feedback: ""
   },
-  glass:{
+  glass: {
     name: "Glass",
     items: [],
     feedback: "Correct!"
@@ -39,7 +39,7 @@ const columnsFromBackend = {
     items: [],
     feedback: "Incorrect: This is for non-contaminated waste ONLY."
   },
-  serological:{
+  serological: {
     name: "Serological Pipettes",
     items: [],
     feedback: "Incorrect: This is for contaminated serological pipettes."
@@ -58,17 +58,13 @@ const onDragEnd = (result, columns, setColumns) => {
     const destItems = [...destColumn.items];
     const [removed] = sourceItems.splice(source.index, 1);
     destItems.splice(destination.index, 0, removed);
-    // console.log(columnsFromBackend)
-    // let item = columnsFromBackend.waste.items[source.index];
-    // console.log(destination.droppableId.toString())
-    if(destination.droppableId.toString() == "sharps" || destination.droppableId.toString() == "glass"){
+    if (destination.droppableId.toString() == "sharps" || destination.droppableId.toString() == "glass") {
       order = true;
-    } else if(destination.droppableId.toString() == "biowaste"){
-    } else if(destination.droppableId.toString() == "trashbag"){
-    }else if(destination.droppableId.toString() == "serological"){
+    } else if (destination.droppableId.toString() == "biowaste") {
+    } else if (destination.droppableId.toString() == "trashbag") {
+    } else if (destination.droppableId.toString() == "serological") {
     }
-    
-    
+
     setColumns({
       ...columns,
       [source.droppableId]: {
@@ -96,196 +92,191 @@ const onDragEnd = (result, columns, setColumns) => {
 };
 
 function BrokenGlassDnD() {
-  // checkPlacement();
   const [columns, setColumns] = useState(columnsFromBackend);
-  // const [order, correctOrder] = useState(false);
+
   return order ? (
     <div>
-  <Header/>
+      <Header />
       <Container>
-        <div style={{textAlign: "center",}}>
-        <h1>Waste Disposal</h1>
-        <p>Place the waste into the correct category to proceed.</p><br/></div>
-      </Container>    
-    <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-  
-    <DragDropContext
-      onDragEnd={result => onDragEnd(result, columns, setColumns)}
-    >
-      {Object.entries(columns).map(([columnId, column], index) => {
-        return (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-            key={columnId}
-          >
-            <h4>{column.name}</h4>
-            <div style={{ margin: 8 }}>
-              <Droppable droppableId={columnId} key={columnId}>
-                {(provided, snapshot) => {
-                  return (
-                    <div
-                      {...provided.droppableProps}
-                      ref={provided.innerRef}
-                      style={{
-                        background: (columnId == "waste" ? "#86b7d9" : "white"),
-                        border: "2px solid #86b7d9",
-                        padding: 4,
-                        width: 200,
-                        minHeight: 500,
-                      }}
-                    >
-                      {column.items.map((item, index) => {
-                        return (
-                          <Draggable
-                            key={item.id}
-                            draggableId={item.id}
-                            index={index}
-                          >
-                            {(provided, snapshot) => {
-                              return (
-                                <div
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
-                                  {...provided.dragHandleProps}
-                                  style={{
-                                    userSelect: "none",
-                                    padding: 16,
-                                    margin: "0 0 8px 0",
-                                    minHeight: "470px",
-                                    textAlign: "center",
-                                    backgroundColor: "white",
-                                    color: "black",
-                                    ...provided.draggableProps.style
-                                  }}
-                                >
-                                  <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{width:"10em"}}></Image>
-                                  {item.content}
-                                  <br/><br/>
-                                  <div style={{display: (columnId == "waste" ? "none" : "")}}>
-                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
-                                  </div>
-                                </div>
-                              );
-                            }}
-                          </Draggable>
-                        );
-                      })}
-                      {provided.placeholder}
-                    </div>
-                  );
-                }}
-              </Droppable>
-            </div>
-          </div>
-      );
-    })}
-  </DragDropContext>
-    
-</div>
-<Nav prev="SortingSampDND" next="DnD2"/>
-</div>
-  ) :(   
-   <div>
-      <Header/>
-      <Container>
-        <div style={{textAlign: "center",}}>
-        <h1>Waste Disposal</h1>
-        <p>Place the waste into the correct category to proceed.</p><br/></div>
+        <div style={{ textAlign: "center", }}>
+          <h1>Waste Disposal</h1>
+          <p>Place the waste into the correct category to proceed.</p><br /></div>
       </Container>
-      
-      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-  
-        <DragDropContext
-        onDragEnd={result => onDragEnd(result, columns, setColumns)}
-    >
-        {Object.entries(columns).map(([columnId, column], index) => {
-        return (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-            key={columnId}
-          >
 
-            <h4>{column.name}</h4>
-            {/* <Overlay target="please" show={true} placement="right">
-                            {(props) => (
-                                <Tooltip {...props}>Incorrect!</Tooltip>
-                           )}
-                        </Overlay> */}
-            <div style={{ margin: 8 }}>
-              <Droppable droppableId={columnId} key={columnId}>
-                {(provided, snapshot) => {
-                  return (
-                    <div
-                      {...provided.droppableProps}
-                      ref={provided.innerRef}
-                      style={{
-                        background: (columnId == "waste" ? "#86b7d9" : "white"),
-                        border: "2px solid #86b7d9",
-                        padding: 4,
-                        width: 200,
-                        minHeight: 500,
-                      }}
-                    >
-                      {column.items.map((item, index) => {
-                        return (
-                          <Draggable
-                            key={item.id}
-                            draggableId={item.id}
-                            index={index}
-                          >
-                            {(provided, snapshot) => {
-                              return (
-                                <div
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
-                                  {...provided.dragHandleProps}
-                                  style={{
-                                    userSelect: "none",
-                                    padding: 16,
-                                    margin: "0 0 8px 0",
-                                    minHeight: "470px",
-                                    textAlign: "center",
-                                    backgroundColor: "white",
-                                    color: "black",
-                                    ...provided.draggableProps.style
-                                  }}
-                                > 
-                                  <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{width:"10em"}}></Image>
-                                  {item.content}
-                                  <div style={{display: (columnId == "waste" ? "none" : "")}}>
-                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
-                                  </div>
-                                </div>
-                                
-                              );
-                            }}
-                          </Draggable>
-                        );
-                      })}
-                      {provided.placeholder}
-                    </div>
-                  );
+      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+
+        <DragDropContext
+          onDragEnd={result => onDragEnd(result, columns, setColumns)}
+        >
+          {Object.entries(columns).map(([columnId, column], index) => {
+            return (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
-              </Droppable>
-            </div>
-          </div>
-      );
-    })}
-  </DragDropContext>
-  </div>
-  <Link to="/SortingSampDND">
-            <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-  </Link>
-  </div>
-); 
+                key={columnId}
+              >
+                <h4>{column.name}</h4>
+                <div style={{ margin: 8 }}>
+                  <Droppable droppableId={columnId} key={columnId}>
+                    {(provided) => {
+                      return (
+                        <div
+                          {...provided.droppableProps}
+                          ref={provided.innerRef}
+                          style={{
+                            background: (columnId == "waste" ? "#86b7d9" : "white"),
+                            border: "2px solid #86b7d9",
+                            padding: 4,
+                            width: 200,
+                            minHeight: 500,
+                          }}
+                        >
+                          {column.items.map((item, index) => {
+                            return (
+                              <Draggable
+                                key={item.id}
+                                draggableId={item.id}
+                                index={index}
+                              >
+                                {(provided) => {
+                                  return (
+                                    <div
+                                      ref={provided.innerRef}
+                                      {...provided.draggableProps}
+                                      {...provided.dragHandleProps}
+                                      style={{
+                                        userSelect: "none",
+                                        padding: 16,
+                                        margin: "0 0 8px 0",
+                                        minHeight: "470px",
+                                        textAlign: "center",
+                                        backgroundColor: "white",
+                                        color: "black",
+                                        ...provided.draggableProps.style
+                                      }}
+                                    >
+                                      <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "10em" }}></Image>
+                                      {item.content}
+                                      <br /><br />
+                                      <div style={{ display: (columnId == "waste" ? "none" : "") }}>
+                                        <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '170px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>
+                                      </div>
+                                    </div>
+                                  );
+                                }}
+                              </Draggable>
+                            );
+                          })}
+                          {provided.placeholder}
+                        </div>
+                      );
+                    }}
+                  </Droppable>
+                </div>
+              </div>
+            );
+          })}
+        </DragDropContext>
+
+      </div>
+      <Nav prev="SortingSampDND" next="DnD2" />
+    </div>
+  ) : (
+      <div>
+        <Header />
+        <Container>
+          <div style={{ textAlign: "center", }}>
+            <h1>Waste Disposal</h1>
+            <p>Place the waste into the correct category to proceed.</p><br /></div>
+        </Container>
+
+        <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+
+          <DragDropContext
+            onDragEnd={result => onDragEnd(result, columns, setColumns)}
+          >
+            {Object.entries(columns).map(([columnId, column], index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                  key={columnId}
+                >
+
+                  <h4>{column.name}</h4>
+                  <div style={{ margin: 8 }}>
+                    <Droppable droppableId={columnId} key={columnId}>
+                      {(provided, snapshot) => {
+                        return (
+                          <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            style={{
+                              background: (columnId == "waste" ? "#86b7d9" : "white"),
+                              border: "2px solid #86b7d9",
+                              padding: 4,
+                              width: 200,
+                              minHeight: 500,
+                            }}
+                          >
+                            {column.items.map((item, index) => {
+                              return (
+                                <Draggable
+                                  key={item.id}
+                                  draggableId={item.id}
+                                  index={index}
+                                >
+                                  {(provided) => {
+                                    return (
+                                      <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                        style={{
+                                          userSelect: "none",
+                                          padding: 16,
+                                          margin: "0 0 8px 0",
+                                          minHeight: "470px",
+                                          textAlign: "center",
+                                          backgroundColor: "white",
+                                          color: "black",
+                                          ...provided.draggableProps.style
+                                        }}
+                                      >
+                                        <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "10em" }}></Image>
+                                        {item.content}
+                                        <div style={{ display: (columnId == "waste" ? "none" : "") }}>
+                                          <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '170px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>
+                                        </div>
+                                      </div>
+
+                                    );
+                                  }}
+                                </Draggable>
+                              );
+                            })}
+                            {provided.placeholder}
+                          </div>
+                        );
+                      }}
+                    </Droppable>
+                  </div>
+                </div>
+              );
+            })}
+          </DragDropContext>
+        </div>
+        <Link to="/SortingSampDND">
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link>
+      </div>
+    );
 }
 
 export default BrokenGlassDnD;

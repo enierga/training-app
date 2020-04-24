@@ -98,7 +98,7 @@ const SortingSampDnD = () => {
                 <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
             </Link>
             {/*Correct the link and add route*/}
-            <Link to="/End">
+            <Link to="/DnD1">
                     <Button variant='warning' style={{color: 'white', float: "right"}}>NEXT</Button>
             </Link>
             </Container>

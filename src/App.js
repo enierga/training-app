@@ -140,6 +140,7 @@ class App extends Component {
             <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/Injury" component={Injury} />
             <DndProvider backend={Backend}>
+            <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
             <Route exact path="/DnD1" component={BrokenGlassDnD}/>
             <Route exact path="/DnD2" component={PasteurPipettesDnD}/>
             <Route exact path="/DnD3" component={BloodTubeDnD}/>
@@ -158,7 +159,7 @@ class App extends Component {
             <Route exact path="/Def" component={Definition} />
             <Route exact path="/SampMC" component={SampMC} />
             <DndProvider backend={Backend}>
-              <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
+              {/* <Route exact path="/SortingSampDnD" component={SortingSampDnD}/> */}
               <Route exact path="/BucketSampDnD" component={BucketSampDnD}/>
               <Route exact path="/FTB" component={FTB}/>
             </DndProvider>

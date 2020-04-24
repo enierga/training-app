@@ -51,24 +51,16 @@ import FlasksDnD from './pages/05-Disposal/DnD8-Flasks';
 import SerolDnD from './pages/05-Disposal/DnD9-Serological'
 import WrapDnD from './pages/05-Disposal/DnD10-Wrappers'
 import NeedleDnD from './pages/05-Disposal/DnD11-Needles'
-
-
-
-import End from './pages/06-End'
-
-import testing from './pages/testing'
-
-import Definition from './pages/03-Types/definition';
-import SampMC from './pages/03-Types/def-assessment';
-
 import SortingSampDnD from './pages/05-Disposal/samp-dnd';
-import BucketSampDnD from './components/bucketdnd';
+
+import End from './pages/End/06-End'
 
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
-import FTB from './pages/03-Types/FTB';
 
 class App extends Component {
+
+  /* Super Experimental Audio Implementation */
 
   // componentDidMount() {
   //   this.audio = new Audio("./Audio/default.mp3");
@@ -94,8 +86,6 @@ class App extends Component {
       <div className='App' >
         <Router>
           <Switch>
-            <Route exact path="/testing" component={testing}/>
-
             {/*01-Home*/}
             <Route exact path="/" component={Home} />
             {/*02-Start*/}
@@ -140,28 +130,23 @@ class App extends Component {
             <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/Injury" component={Injury} />
             <DndProvider backend={Backend}>
-            <Route exact path="/DnD1" component={BrokenGlassDnD}/>
-            <Route exact path="/DnD2" component={PasteurPipettesDnD}/>
-            <Route exact path="/DnD3" component={BloodTubeDnD}/>
-            <Route exact path="/DnD4" component={PPEDnD}/>
-            <Route exact path="/DnD5" component={PipTipsDnD}/>
-            <Route exact path="/DnD6" component={PlatesDnD}/>
-            <Route exact path="/DnD7" component={TubesDnD}/>
-            <Route exact path="/DnD8" component={FlasksDnD}/>
-            <Route exact path="/DnD9" component={SerolDnD}/>
-            <Route exact path="/DnD10" component={WrapDnD}/>
-            <Route exact path="/DnD11" component={NeedleDnD}/>
+              <Route exact path="/DnD1" component={BrokenGlassDnD} />
+              <Route exact path="/DnD2" component={PasteurPipettesDnD} />
+              <Route exact path="/DnD3" component={BloodTubeDnD} />
+              <Route exact path="/DnD4" component={PPEDnD} />
+              <Route exact path="/DnD5" component={PipTipsDnD} />
+              <Route exact path="/DnD6" component={PlatesDnD} />
+              <Route exact path="/DnD7" component={TubesDnD} />
+              <Route exact path="/DnD8" component={FlasksDnD} />
+              <Route exact path="/DnD9" component={SerolDnD} />
+              <Route exact path="/DnD10" component={WrapDnD} />
+              <Route exact path="/DnD11" component={NeedleDnD} />
+              <Route exact path="/SortingSampDnD" component={SortingSampDnD} />
+              {/* <Route exact path="/BucketSampDnD" component={BucketSampDnD} /> */}
             </DndProvider>
             {/* End */}
             <Route exact path="/End" component={End} />
 
-            <Route exact path="/Def" component={Definition} />
-            <Route exact path="/SampMC" component={SampMC} />
-            <DndProvider backend={Backend}>
-              <Route exact path="/SortingSampDnD" component={SortingSampDnD}/>
-              <Route exact path="/BucketSampDnD" component={BucketSampDnD}/>
-              <Route exact path="/FTB" component={FTB}/>
-            </DndProvider>
           </Switch>
         </Router>
       </div>

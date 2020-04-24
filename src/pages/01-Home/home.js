@@ -6,6 +6,8 @@ import well from "../../components/white-old-well.svg";
 
 export default class Home extends Component {
 
+  /* Super Experimental Audio Implementation */
+
   // componentDidMount() {
   //   this.audio = new Audio("./Audio/default.mp3");
   //   this.audio.load();
@@ -40,16 +42,16 @@ export default class Home extends Component {
 
         {/*use Link on a button to proceed to next page  */}
         <Link to="/Policy">
-          <Button variant='warning' style={{ color: 'white', float: "right" }}>GET STARTED</Button>
+          <Button variant='warning' style={{ color: 'white', float: "right" }}>START</Button>
         </Link>
 
         {/*Temporary link to Disposal section */}
-        <Link to="/ProcessA">
+        {/* <Link to="/ProcessA">
           <Button variant='success' style={{ color: 'white' }}>EXAMPLE MODULE</Button>
-        </Link><br /><br />
+        </Link><br /><br /> */}
 
         {/*Link to example question types*/}
-        <Link to="/SampMC">
+        {/* <Link to="/SampMC">
           <Button variant='outline-success'>Multiple-choice</Button>
         </Link><br /><br />
         <Link to="/SortingSampDnD">
@@ -57,10 +59,7 @@ export default class Home extends Component {
         </Link><br /><br />
         <Link to="/BucketSampDnD">
           <Button variant='outline-success'>Bucket Drag n Drop</Button>
-        </Link><br /><br />
-        <Link to="/FTB">
-          <Button variant='outline-success'>Fill in the Blank</Button>
-        </Link>
+        </Link><br /><br /> */}
 
       </Container>
     );

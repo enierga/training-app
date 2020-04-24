@@ -1,11 +1,10 @@
-import React, { Component, useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
 import Header from '../../components/header';
-import { Container, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import update from 'immutability-helper'
 
 const itemsFromBackend = [
   { id: uuid(), content: "Pippette Wrappers" },
@@ -77,10 +76,10 @@ function BucketSampDnD6() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
     <div>
-      <Header/>
-        <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #6:  Put the items in the correct containers.</p>
-        <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-      
+      <Header />
+      <p align="center">Bloodborne Pathogen Comprehension Drag and Drop Question #6:  Put the items in the correct containers.</p>
+      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
         >
@@ -149,20 +148,20 @@ function BucketSampDnD6() {
                     }}
                   </Droppable>
                 </div>
-                
+
               </div>
-            
-          );
-        })}
-      </DragDropContext>
-      <br></br><br></br>
-      <Link to="/BucketSampDnd5">
-        <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-      </Link><br></br><br></br>
-      <Link to="/FTB">
-        <Button variant='warning' style={{color: 'white'}}>NEXT</Button>
-      </Link>
-    </div>
+
+            );
+          })}
+        </DragDropContext>
+        <br></br><br></br>
+        <Link to="/BucketSampDnd5">
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link><br></br><br></br>
+        <Link to="/FTB">
+          <Button variant='warning' style={{ color: 'white' }}>NEXT</Button>
+        </Link>
+      </div>
     </div>
   );
 }

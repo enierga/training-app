@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from './header';
-import Nav from './nav';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +19,7 @@ const columnsFromBackend = {
     name: "Waste",
     items: itemsFromBackend
   },
-  glass:{
+  glass: {
     name: "Glass",
     items: []
   },
@@ -39,26 +38,26 @@ const columnsFromBackend = {
 };
 
 const checkPlacement = () => {
-  if(columnsFromBackend.waste.items[0] != null){
+  if (columnsFromBackend.waste.items[0] !== null) {
   }
-  else{
-    if(columnsFromBackend.sharps.items[0] != null){
-      for(let i = 0; i<columnsFromBackend.sharps.items.length; i++){
-        if(columnsFromBackend.sharps.items[i].wID != 'Sharps'){
+  else {
+    if (columnsFromBackend.sharps.items[0] !== null) {
+      for (let i = 0; i < columnsFromBackend.sharps.items.length; i++) {
+        if (columnsFromBackend.sharps.items[i].wID !== 'Sharps') {
           return false;
         }
       }
     }
-    if(columnsFromBackend.biowaste.items[0] != null){
-      for(let i = 0; i<columnsFromBackend.biowaste.items.length; i++){
-        if(columnsFromBackend.biowaste.items[i].wID != 'Biowaste'){
+    if (columnsFromBackend.biowaste.items[0] !== null) {
+      for (let i = 0; i < columnsFromBackend.biowaste.items.length; i++) {
+        if (columnsFromBackend.biowaste.items[i].wID !== 'Biowaste') {
           return false;
         }
       }
     }
-    if(columnsFromBackend.trashbag.items[0] != null){  
-      for(let i = 0; i<columnsFromBackend.trashbag.items.length; i++){
-        if(columnsFromBackend.trashbag.items[i].wID != 'Trashbag'){
+    if (columnsFromBackend.trashbag.items[0] !== null) {
+      for (let i = 0; i < columnsFromBackend.trashbag.items.length; i++) {
+        if (columnsFromBackend.trashbag.items[i].wID !== 'Trashbag') {
           return false;
         }
       }
@@ -79,79 +78,84 @@ const onDragEnd = (result, columns, setColumns) => {
     const [removed] = sourceItems.splice(source.index, 1);
     destItems.splice(destination.index, 0, removed);
     console.log(columnsFromBackend)
+
     //Mutating the Waste bucket array
-    if(destination.droppableId.toString() == columnsFromBackend.waste.name.toString().toLowerCase()){
-      if(source.droppableId.toString() == columnsFromBackend.biowaste.name.toString().toLowerCase()){
+    if (destination.droppableId.toString() === columnsFromBackend.waste.name.toString().toLowerCase()) {
+      if (source.droppableId.toString() === columnsFromBackend.biowaste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.waste.items[source.index];
-        columnsFromBackend.biowaste.items.splice(source.index,1);
+        columnsFromBackend.biowaste.items.splice(source.index, 1);
         columnsFromBackend.waste.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.sharps.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.sharps.name.toString().toLowerCase()) {
         let item = columnsFromBackend.sharps.items[source.index];
-        columnsFromBackend.sharps.items.splice(source.index,1);
+        columnsFromBackend.sharps.items.splice(source.index, 1);
         columnsFromBackend.waste.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.trashbag.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.trashbag.name.toString().toLowerCase()) {
         let item = columnsFromBackend.trashbag.items[source.index];
-        columnsFromBackend.trashbag.items.splice(source.index,1);
+        columnsFromBackend.trashbag.items.splice(source.index, 1);
         columnsFromBackend.waste.items.push(item)
       }
     }
+
     //Mutating the Sharps bucket array
-    if(destination.droppableId.toString() == columnsFromBackend.sharps.name.toString().toLowerCase()){
-      if(source.droppableId.toString() == columnsFromBackend.waste.name.toString().toLowerCase()){
+    if (destination.droppableId.toString() === columnsFromBackend.sharps.name.toString().toLowerCase()) {
+      if (source.droppableId.toString() === columnsFromBackend.waste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.waste.items[source.index];
-        columnsFromBackend.waste.items.splice(source.index,1);
+        columnsFromBackend.waste.items.splice(source.index, 1);
         columnsFromBackend.sharps.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.biowaste.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.biowaste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.biowaste.items[source.index];
-        columnsFromBackend.biowaste.items.splice(source.index,1);
+        columnsFromBackend.biowaste.items.splice(source.index, 1);
         columnsFromBackend.sharps.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.trashbag.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.trashbag.name.toString().toLowerCase()) {
         let item = columnsFromBackend.trashbag.items[source.index];
-        columnsFromBackend.trashbag.items.splice(source.index,1);
+        columnsFromBackend.trashbag.items.splice(source.index, 1);
         columnsFromBackend.sharps.items.push(item)
       }
-      
+
     }
-//Mutating the Biowaste bucket array
-    if(destination.droppableId.toString() == columnsFromBackend.biowaste.name.toString().toLowerCase()){
-      if(source.droppableId.toString() == columnsFromBackend.waste.name.toString().toLowerCase()){
+
+    //Mutating the Biowaste bucket array
+    if (destination.droppableId.toString() === columnsFromBackend.biowaste.name.toString().toLowerCase()) {
+      if (source.droppableId.toString() === columnsFromBackend.waste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.waste.items[source.index];
-        columnsFromBackend.waste.items.splice(source.index,1);
+        columnsFromBackend.waste.items.splice(source.index, 1);
         columnsFromBackend.biowaste.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.sharps.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.sharps.name.toString().toLowerCase()) {
         let item = columnsFromBackend.sharps.items[source.index];
-        columnsFromBackend.sharps.items.splice(source.index,1);
+        columnsFromBackend.sharps.items.splice(source.index, 1);
         columnsFromBackend.biowaste.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.trashbag.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.trashbag.name.toString().toLowerCase()) {
         let item = columnsFromBackend.trashbag.items[source.index];
-        columnsFromBackend.trashbag.items.splice(source.index,1);
+        columnsFromBackend.trashbag.items.splice(source.index, 1);
         columnsFromBackend.biowaste.items.push(item)
       }
     }
+
     //Mutating the trashbag bucket array
-    if(destination.droppableId.toString() == columnsFromBackend.trashbag.name.toString().toLowerCase()){
-      if(source.droppableId.toString() == columnsFromBackend.waste.name.toString().toLowerCase()){
+    if (destination.droppableId.toString() === columnsFromBackend.trashbag.name.toString().toLowerCase()) {
+      if (source.droppableId.toString() === columnsFromBackend.waste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.waste.items[source.index];
-        columnsFromBackend.waste.items.splice(source.index,1);
+        columnsFromBackend.waste.items.splice(source.index, 1);
         columnsFromBackend.trashbag.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.sharps.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.sharps.name.toString().toLowerCase()) {
         let item = columnsFromBackend.sharps.items[source.index];
-        columnsFromBackend.sharps.items.splice(source.index,1);
+        columnsFromBackend.sharps.items.splice(source.index, 1);
         columnsFromBackend.trashbag.items.push(item)
       }
-      if(source.droppableId.toString() == columnsFromBackend.biowaste.name.toString().toLowerCase()){
+      if (source.droppableId.toString() === columnsFromBackend.biowaste.name.toString().toLowerCase()) {
         let item = columnsFromBackend.trashbag.items[source.index];
-        columnsFromBackend.biowaste.items.splice(source.index,1);
+        columnsFromBackend.biowaste.items.splice(source.index, 1);
         columnsFromBackend.trashbag.items.push(item)
       }
     }
+
     setColumns({
       ...columns,
       [source.droppableId]: {
@@ -163,6 +167,7 @@ const onDragEnd = (result, columns, setColumns) => {
         items: destItems
       }
     });
+
   } else {
     const column = columns[source.droppableId];
     const copiedItems = [...column.items];
@@ -184,9 +189,9 @@ function BucketSampDnD() {
   const [order, correctOrder] = useState(false);
   return order ? (
     <div>
-      <Header/>
-        <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-      
+      <Header />
+      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
         >
@@ -256,99 +261,99 @@ function BucketSampDnD() {
                   </Droppable>
                 </div>
               </div>
-          );
-        })}
-      </DragDropContext>
+            );
+          })}
+        </DragDropContext>
+      </div>
+      <Link to="/SampMC">
+        <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+      </Link>
+      <Button variant='warning' style={{ color: 'white', float: 'right' }}> NEXT</Button>
     </div>
-    <Link to="/SampMC">
-                <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-    </Link>
-    <Button variant= 'warning' style={{color: 'white',float: 'right'}}> NEXT</Button>
-    </div>
-  ) :(   
-   <div>
-  <Header/>
-    <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-  
-    <DragDropContext
-      onDragEnd={result => onDragEnd(result, columns, setColumns)}
-    >
-      {Object.entries(columns).map(([columnId, column], index) => {
-        return (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center"
-            }}
-            key={columnId}
+  ) : (
+      <div>
+        <Header />
+        <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+
+          <DragDropContext
+            onDragEnd={result => onDragEnd(result, columns, setColumns)}
           >
-            <h2>{column.name}</h2>
-            <div style={{ margin: 8 }}>
-              <Droppable droppableId={columnId} key={columnId}>
-                {(provided, snapshot) => {
-                  return (
-                    <div
-                      {...provided.droppableProps}
-                      ref={provided.innerRef}
-                      style={{
-                        background: snapshot.isDraggingOver
-                          ? "lightblue"
-                          : "lightgrey",
-                        padding: 4,
-                        width: 250,
-                        minHeight: 500
-                      }}
-                    >
-                      {column.items.map((item, index) => {
+            {Object.entries(columns).map(([columnId, column], index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center"
+                  }}
+                  key={columnId}
+                >
+                  <h2>{column.name}</h2>
+                  <div style={{ margin: 8 }}>
+                    <Droppable droppableId={columnId} key={columnId}>
+                      {(provided, snapshot) => {
                         return (
-                          <Draggable
-                            key={item.id}
-                            draggableId={item.id}
-                            index={index}
-                          >
-                            {(provided, snapshot) => {
-                              return (
-                                <div
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
-                                  {...provided.dragHandleProps}
-                                  style={{
-                                    userSelect: "none",
-                                    padding: 16,
-                                    margin: "0 0 8px 0",
-                                    minHeight: "50px",
-                                    backgroundColor: snapshot.isDragging
-                                      ? "#263B4A"
-                                      : "#456C86",
-                                    color: "white",
-                                    ...provided.draggableProps.style
-                                  }}
-                                >
-                                  {item.content}
-                                </div>
-                              );
+                          <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            style={{
+                              background: snapshot.isDraggingOver
+                                ? "lightblue"
+                                : "lightgrey",
+                              padding: 4,
+                              width: 250,
+                              minHeight: 500
                             }}
-                          </Draggable>
+                          >
+                            {column.items.map((item, index) => {
+                              return (
+                                <Draggable
+                                  key={item.id}
+                                  draggableId={item.id}
+                                  index={index}
+                                >
+                                  {(provided, snapshot) => {
+                                    return (
+                                      <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                        style={{
+                                          userSelect: "none",
+                                          padding: 16,
+                                          margin: "0 0 8px 0",
+                                          minHeight: "50px",
+                                          backgroundColor: snapshot.isDragging
+                                            ? "#263B4A"
+                                            : "#456C86",
+                                          color: "white",
+                                          ...provided.draggableProps.style
+                                        }}
+                                      >
+                                        {item.content}
+                                      </div>
+                                    );
+                                  }}
+                                </Draggable>
+                              );
+                            })}
+                            {provided.placeholder}
+                          </div>
                         );
-                      })}
-                      {provided.placeholder}
-                    </div>
-                  );
-                }}
-              </Droppable>
-            </div>
-          </div>
-      );
-    })}
-  </DragDropContext>
-</div>
-<Link to="/Injury">
-            <Button variant='warning' style={{color: 'white'}}>PREVIOUS</Button>
-</Link>
-<Button variant= 'warning' style={{color: 'white',float: 'right'}} onClick={() => correctOrder(checkPlacement())}> Submit </Button>
-</div>
-); 
+                      }}
+                    </Droppable>
+                  </div>
+                </div>
+              );
+            })}
+          </DragDropContext>
+        </div>
+        <Link to="/Injury">
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link>
+        <Button variant='warning' style={{ color: 'white', float: 'right' }} onClick={() => correctOrder(checkPlacement())}> Submit </Button>
+      </div>
+    );
 }
 
 export default BucketSampDnD;

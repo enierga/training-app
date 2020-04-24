@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
 import well from "../../components/white-old-well.svg";
 
-export default class Home extends Component {
+
+export default class End extends Component {
   render() {
     return (
       <Container>
@@ -20,9 +20,9 @@ export default class Home extends Component {
         </Jumbotron>
 
         {/*Change link*/}
-        <Link to="/End">
+        <a href="https://ehsdev.cloudapps.unc.edu/SelfStudyUnits/?testid=116">
           <Button variant='warning' style={{ color: 'white', float: "right" }}>Click to access the assessment</Button>
-        </Link>
+        </a>
 
       </Container>
     );

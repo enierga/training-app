@@ -16,7 +16,7 @@ export default class Nav extends Component {
     /*
     * This is where the delay for each page is set, in milliseconds.
     */
-    var time = 10000;
+    var time = 5000;
 
     setTimeout(() => this.setState({ isButtonDisabled: false }), time);
 
@@ -48,7 +48,7 @@ export default class Nav extends Component {
         <Link to={`/${this.props.next}`}>
           <Button id="nextButton" variant='warning' disabled={this.state.isButtonDisabled} style={{ color: 'white', float: "right" }}>
             <Spinner animation="border" variant="info" size="sm" />
-            <span id="timeLeft"> 10 </span>seconds left</Button>
+            <span id="timeLeft"> 5 </span>seconds left</Button>
         </Link>
       </div>  
     )

@@ -61,11 +61,11 @@ const onDragEnd = (result, columns, setColumns) => {
     // console.log(columnsFromBackend)
     // let item = columnsFromBackend.waste.items[source.index];
     // console.log(destination.droppableId.toString())
-    if(destination.droppableId.toString() == "sharps" || destination.droppableId.toString() == "glass"){
+    if(destination.droppableId.toString() === "sharps" || destination.droppableId.toString() === "glass"){
       order = true;
-    } else if(destination.droppableId.toString() == "biowaste"){
-    } else if(destination.droppableId.toString() == "trashbag"){
-    }else if(destination.droppableId.toString() == "serological"){
+    } else if(destination.droppableId.toString() === "biowaste"){
+    } else if(destination.droppableId.toString() === "trashbag"){
+    }else if(destination.droppableId.toString() === "serological"){
     }
     
     
@@ -131,7 +131,7 @@ function BrokenGlassDnD() {
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                       style={{
-                        background: (columnId == "waste" ? "#86b7d9" : "white"),
+                        background: (columnId === "waste" ? "#86b7d9" : "white"),
                         border: "2px solid #86b7d9",
                         padding: 4,
                         width: 200,
@@ -165,7 +165,7 @@ function BrokenGlassDnD() {
                                   <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{width:"10em"}}></Image>
                                   {item.content}
                                   <br/><br/>
-                                  <div style={{display: (columnId == "waste" ? "none" : "")}}>
+                                  <div style={{display: (columnId === "waste" ? "none" : "")}}>
                                       <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
                                   </div>
                                 </div>
@@ -227,7 +227,7 @@ function BrokenGlassDnD() {
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                       style={{
-                        background: (columnId == "waste" ? "#86b7d9" : "white"),
+                        background: (columnId === "waste" ? "#86b7d9" : "white"),
                         border: "2px solid #86b7d9",
                         padding: 4,
                         width: 200,
@@ -260,7 +260,7 @@ function BrokenGlassDnD() {
                                 > 
                                   <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{width:"10em"}}></Image>
                                   {item.content}
-                                  <div style={{display: (columnId == "waste" ? "none" : "")}}>
+                                  <div style={{display: (columnId === "waste" ? "none" : "")}}>
                                       <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
                                   </div>
                                 </div>

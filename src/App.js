@@ -119,6 +119,10 @@ class App extends Component {
             <Route exact path="/CollectionQ3" component={CollectionQ3} />
             <Route exact path="/CollectionQ4" component={CollectionQ4} />
             <Route exact path="/CollectionQ5" component={CollectionQ5} />
+
+            {/* End */}
+            <Route exact path="/End" component={End} />
+
             {/*05-Disposal*/}
             <Route exact path="/ProcessA" component={ProcessA} />
             <Route exact path="/ProcessB" component={ProcessB} />
@@ -142,11 +146,7 @@ class App extends Component {
               <Route exact path="/DnD10" component={WrapDnD} />
               <Route exact path="/DnD11" component={NeedleDnD} />
               <Route exact path="/SortingSampDnD" component={SortingSampDnD} />
-              {/* <Route exact path="/BucketSampDnD" component={BucketSampDnD} /> */}
             </DndProvider>
-            {/* End */}
-            <Route exact path="/End" component={End} />
-
           </Switch>
         </Router>
       </div>

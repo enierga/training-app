@@ -15,7 +15,6 @@ export default class Purpose extends Component {
           <ListGroup.Item>Types of biohazardous waste</ListGroup.Item>
           <ListGroup.Item>Collection methods</ListGroup.Item>
           <ListGroup.Item>Disposal methods</ListGroup.Item>
-          <ListGroup.Item>[Downstream exposure risks??]</ListGroup.Item>
         </ListGroup>
         <br />
         <Nav prev="Policy" next="Solids" />

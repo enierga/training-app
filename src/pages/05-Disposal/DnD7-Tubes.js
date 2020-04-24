@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from '../../components/header';
-import { Button, Image } from 'react-bootstrap';
+import { Button, Image, Container, Card } from 'react-bootstrap';
 import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
@@ -16,27 +16,33 @@ const itemsFromBackend = [
 const columnsFromBackend = {
   waste: {
     name: "Waste",
-    items: itemsFromBackend
+    items: itemsFromBackend,
+    feedback: ""
   },
   glass: {
     name: "Glass",
-    items: []
+    items: [],
+    feedback: "Incorrect: This is for contaminated broken glass only."
   },
   sharps: {
     name: "Sharps",
-    items: []
+    items: [],
+    feedback: "Incorrect: This is for contaminated sharps only."
   },
   biowaste: {
     name: "Biowaste",
-    items: []
+    items: [],
+    feedback: "Correct!"
   },
   trashbag: {
     name: "Trashbag",
-    items: []
+    items: [],
+    feedback: "Incorrect: This is for non-contaminated waste ONLY."
   },
   serological: {
     name: "Serological Pipettes",
-    items: []
+    items: [],
+    feedback: "Incorrect: This is for contaminated serological pipettes."
   }
 };
 
@@ -54,16 +60,11 @@ const onDragEnd = (result, columns, setColumns) => {
 
     destItems.splice(destination.index, 0, removed);
     if (destination.droppableId.toString() === "biowaste") {
-      alert('correct');
       order = true;
     } else if (destination.droppableId.toString() === "glass") {
-      alert('Incorrect: This is for contaminated broken glass only')
     } else if (destination.droppableId.toString() === "sharps") {
-      alert('incorrect: This is for contaminated sharps only ')
     } else if (destination.droppableId.toString() === "trashbag") {
-      alert('Incorrect: This is for non-contaminated waste ONLY')
     } else if (destination.droppableId.toString() === "serological") {
-      alert('Incorrect: This is for contaminated serological pipettes')
     }
 
 
@@ -99,6 +100,11 @@ function TubesDnD() {
   return order ? (
     <div>
       <Header />
+      <Container>
+        <div style={{textAlign: "center",}}>
+        <h1>Waste Disposal</h1>
+        <p>Place the waste into the correct category to proceed.</p><br/></div>
+      </Container> 
       <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
 
         <DragDropContext
@@ -123,12 +129,11 @@ function TubesDnD() {
                           {...provided.droppableProps}
                           ref={provided.innerRef}
                           style={{
-                            background: snapshot.isDraggingOver
-                              ? "lightblue"
-                              : "lightgrey",
+                            background: (columnId === "waste" ? "#86b7d9" : "white"),
+                            border: "2px solid #86b7d9",
                             padding: 4,
                             width: 200,
-                            minHeight: 300
+                            minHeight: 500,
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -148,16 +153,19 @@ function TubesDnD() {
                                         userSelect: "none",
                                         padding: 16,
                                         margin: "0 0 8px 0",
-                                        minHeight: "50px",
-                                        backgroundColor: snapshot.isDragging
-                                          ? "#263B4A"
-                                          : "#456C86",
-                                        color: "white",
+                                        minHeight: "470px",
+                                        textAlign: "center",
+                                        backgroundColor: "white",
+                                        color: "black",
                                         ...provided.draggableProps.style
                                       }}
                                     >
                                       <Image src="./Types-Images/solids-conicaltubes.jpg" rounded style={{ width: "10em" }}></Image>
                                       {item.content}
+                                      <br/><br/>
+                                  <div style={{display: (columnId === "waste" ? "none" : "")}}>
+                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
+                                  </div>
                                     </div>
                                   );
                                 }}
@@ -181,6 +189,11 @@ function TubesDnD() {
   ) : (
       <div>
         <Header />
+        <Container>
+        <div style={{textAlign: "center",}}>
+        <h1>Waste Disposal</h1>
+        <p>Place the waste into the correct category to proceed.</p><br/></div>
+      </Container>
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
 
           <DragDropContext
@@ -205,12 +218,11 @@ function TubesDnD() {
                             {...provided.droppableProps}
                             ref={provided.innerRef}
                             style={{
-                              background: snapshot.isDraggingOver
-                                ? "lightblue"
-                                : "lightgrey",
+                              background: (columnId === "waste" ? "#86b7d9" : "white"),
+                              border: "2px solid #86b7d9",
                               padding: 4,
                               width: 200,
-                              minHeight: 300
+                              minHeight: 500,
                             }}
                           >
                             {column.items.map((item, index) => {
@@ -230,16 +242,18 @@ function TubesDnD() {
                                           userSelect: "none",
                                           padding: 16,
                                           margin: "0 0 8px 0",
-                                          minHeight: "50px",
-                                          backgroundColor: snapshot.isDragging
-                                            ? "#263B4A"
-                                            : "#456C86",
-                                          color: "white",
+                                          minHeight: "470px",
+                                          textAlign: "center",
+                                          backgroundColor: "white",
+                                          color: "black",
                                           ...provided.draggableProps.style
                                         }}
                                       >
                                         <Image src="./Types-Images/solids-conicaltubes.jpg" rounded style={{ width: "10em" }}></Image>
                                         {item.content}
+                                        <div style={{display: (columnId === "waste" ? "none" : "")}}>
+                                          <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
+                                        </div>
                                       </div>
                                     );
                                   }}

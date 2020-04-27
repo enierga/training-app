@@ -1,5 +1,5 @@
-## Biohazard Disposal Training
-# Overview
+# Biohazard Disposal Training
+## Overview
 The goal of this project is to ensure that those people that are working with lab equipment and who are producing biological waste are disposing of them properly so as to not put waste disposal workers in unnecessary danger. The proposed finished product is an interactive React web app that will serve as a training module for trainees to fully understand the importance and gravity of proper waste disposal. It is also to ensure that proper safety practices are being followed to prevent injury.
 
 # Dependencies
@@ -23,13 +23,13 @@ Example: npm install react
     "react-scripts": "3.4.0",
   }
 
-#Layout
+# Layout
 We have decided to make this a multi-page React app, with our pages being separated into sectioned folders and numbered in the order that they are rendered within each section. 
 
 
 
 
-#Main App.js
+## Main App.js
 Here, our App.js serves as a table of contents for all the pages to be rendered in this training module.
 At the top, we have our react imports, followed by importing the module pages with their corresponding routes.
 Example:
@@ -54,7 +54,7 @@ The path can be set to anything, as long as no other page is currently using the
     <Switch>
 <Router>
 
-## Creating a new page
+# Creating a new page
 When creating a new page, there a few things that need to be imported to every page. For standard content pages, the following should be imported.
 import React, { Component } from 'react';
 import { Container, ListGroup, Row, Col, Image } from 'react-bootstrap';

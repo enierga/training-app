@@ -33,7 +33,7 @@ export default class ProcessA extends Component {
         <br />
         <Row><Col className="text-center"><Image src="./Disposal-Images/1A4.jpg" rounded style={{ width: "20em" }} /></Col></Row>
         <br />
-        <Nav prev="Collection5" next="ProcessB" />
+        <Nav prev="CollectionQ5" next="ProcessB" />
       </Container>);
   }
 }

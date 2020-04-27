@@ -12,7 +12,7 @@ export default class Droso extends Component {
         <h1>Drosophilia</h1>
         <br />
         <Row>
-          <Col xs={3} md={3} className="text-center my-auto"><Image src="./Disposal-Images/4-1.jpg" rounded /></Col>
+          <Col xs={3} md={3} className="text-center my-auto"><Image src="./Disposal-Images/4-1.jpg" rounded style={{ width: "80%" }}/></Col>
           <Col xs={6} md={6} className="text-center my-auto">
             An alternative to autoclaving Drosophila is dumping anesthetized flies directly into a container with a small amount of mineral oil or a bottle containing either ethanol or isopropanol. If you do not plan to re-use the material, these bottles must be labeled as ethanol, isopropanol or mineral oil waste to be picked up by EHS. If you are going to reuse the material you are dumping the Drosophila into, then you will label the bottle recycled ethanol, isopropanol etc.
                     <br /><br />
@@ -24,7 +24,7 @@ export default class Droso extends Component {
               </Card>
             </div>
           </Col>
-          <Col xs={3} md={3} className="text-center my-auto"><Image src="./Disposal-Images/4-2.jpg" rounded /></Col>
+          <Col xs={3} md={3} className="text-center my-auto"><Image src="./Disposal-Images/4-2.jpg" rounded style={{ width: "80%" }}/></Col>
         </Row>
         <br />
         <Nav prev="AutocA" next="Carc" />

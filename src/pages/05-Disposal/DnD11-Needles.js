@@ -106,7 +106,7 @@ function NeedleDnD() {
         <h1>Waste Disposal</h1>
         <p>Place the waste into the correct category to proceed.</p><br/></div>
       </Container> 
-      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+      <div style={{ display: "flex", justifyContent: "center", height: "100%"}}>
 
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}

@@ -12,9 +12,9 @@ export default class PlasticB extends Component {
         <h1>Unacceptable Pipette Disposal</h1>
         <br />
         <Row>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-1.png" rounded style={{ width: "12em" }} /></Col>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-2.jpg" rounded style={{ width: "13em" }} /></Col>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-3.jpg" rounded style={{ width: "16em" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-1.png" rounded style={{ width: "50%" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-2.jpg" rounded style={{ width: "50%" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/2-2B-3.jpg" rounded style={{ width: "70%" }} /></Col>
         </Row>
         <br />
         <Row>

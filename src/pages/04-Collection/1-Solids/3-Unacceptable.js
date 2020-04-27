@@ -12,9 +12,9 @@ export default class SolidsUnacc extends Component {
         <h1>Unacceptable Waste Disposal</h1>
         <br />
         <Row>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-1.jpg" rounded style={{ width: "12em" }} /></Col>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-2.jpg" rounded style={{ width: "15em" }} /></Col>
-          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-3.jpg" rounded style={{ width: "14em" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-1.jpg" rounded style={{ width: "70%" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-2.jpg" rounded style={{ width: "70%" }} /></Col>
+          <Col className="text-center my-auto"><Image src="./Collection-Images/1-3-3.jpg" rounded style={{ width: "70%" }} /></Col>
         </Row>
         <br />
         <Row>

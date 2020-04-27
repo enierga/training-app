@@ -13,8 +13,8 @@ export default class Flask extends Component {
         <h3>Proper aspiration vacuum flask set up</h3>
         <br />
         <Row>
-          <Col xs={4} md={4} className="text-center my-auto"><Image src="./Collection-Images/3-2.png  " rounded /></Col>
-          <Col xs={8} md={8} className="my-auto">
+          <Col xs={5} md={5} className="text-center my-auto"><Image src="./Collection-Images/3-2.png  " rounded style={{ width: "90%" }}/></Col>
+          <Col xs={7} md={7} className="my-auto">
             A - Primary flask (used to collect liquid)<br />
                     B - Secondary flask (overfill flask) minimizes splash<br />
                     C - In line filter between secondary flask and vacuum source<br />

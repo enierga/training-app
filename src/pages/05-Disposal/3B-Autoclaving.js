@@ -27,7 +27,7 @@ export default class AutocB extends Component {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Card style={{ width: '40%' }} bg="danger" text="light">
             <Card.Body>
-              Visit EHS’s <a href="https://ehs.unc.edu/biological/microbio/">Chemical Treatment of Liquid Microbiological Waste webpage</a> to evaluate if chemical treatment of your liquid biohazard waste requires approval.
+              Visit EHS’s <a href="https://ehs.unc.edu/biological/microbio/" style={{ color: "lightblue"}}><u>Chemical Treatment of Liquid Microbiological Waste webpage</u></a> to evaluate if chemical treatment of your liquid biohazard waste requires approval.
                         </Card.Body>
           </Card>
         </div>

@@ -68,7 +68,7 @@ We have created a header/banner that is set to the top of the page with the name
 This component serves for creating and linking previous and next buttons to different pages. These take in two fields: prev and next. You must set these equal to the route of the page you want it to connect to.
 Example: <Nav prev="Policy" next="Solids" />
 This would make a previous button linked to the Policy page, and the next button linked to the Solids Page. 
-## Multiple choice question Pages:
+# Multiple choice question Pages:
 To create a Multiple choice question page, we need to import:
 import MultChoice from "../../components/MultChoice";
 This is also an abstract component that takes in numerous fields. 
@@ -107,9 +107,9 @@ This component follows the same logic as the Multiple  Choice component, but thi
           ansB="False"
         />
 
-## Drag and Drop pages
+# Drag and Drop pages
 There are  two type of  drag and drop pages we have supported: A sorting drag and drop and bucket drag and drop. 
-# Sorting
+## Sorting
 To create more sorting drag and drop questions, copy our sampdnd.js file and mutate the following chunks of code to create your own.
 const [cards, setCards] = useState([
         {id: 3, text: “Step 3”},
@@ -119,7 +119,7 @@ const [cards, setCards] = useState([
   ])
 
 Here, id serves as the order of the tasks created. This array can include as many  or as little tasks as one would like.
-#Bucket Drag and Drop
+##Bucket Drag and Drop
 For Bucket drag and drop questions, the system supports questions that involve dragging ONE item into a correct bin.  To create more Bucket Drag and Drop questions, copy any of the DnD.js files we have already included in the module and mutate the following:
 
 const itemsFromBackend = [

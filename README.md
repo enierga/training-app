@@ -119,7 +119,9 @@ const [cards, setCards] = useState([
   ])
 
 Here, id serves as the order of the tasks created. This array can include as many  or as little tasks as one would like.
-##Bucket Drag and Drop
+
+## Bucket Drag and Drop
+
 For Bucket drag and drop questions, the system supports questions that involve dragging ONE item into a correct bin.  To create more Bucket Drag and Drop questions, copy any of the DnD.js files we have already included in the module and mutate the following:
 
 const itemsFromBackend = [

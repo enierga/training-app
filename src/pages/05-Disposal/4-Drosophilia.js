@@ -19,7 +19,7 @@ export default class Droso extends Component {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Card bg="danger" text="light">
                 <Card.Body>
-                  These bottles of chemicals cannot be poured down the sink or sanitary sewer. They must be discarded using the <a href="https://ehs.cloudapps.unc.edu/HazMat_Pickup/">online hazardous waste pick up program</a> through EHS.
+                  These bottles of chemicals cannot be poured down the sink or sanitary sewer. They must be discarded using the <a href="https://ehs.cloudapps.unc.edu/HazMat_Pickup/" style={{ color: "lightblue"}}><u>online hazardous waste pick up program</u></a> through EHS.
                         </Card.Body>
               </Card>
             </div>

@@ -33,7 +33,8 @@ export default class Home extends Component {
         <Jumbotron fluid style={{ backgroundColor: '#4B9CD3' }}>
           <Row>
             <Col xs="10">
-              <h1 class="display-3" style={{ color: 'white', paddingLeft: "2%" }}>Biological Waste Disposal</h1>
+              <h1 class="display-3" style={{ color: 'white', paddingLeft: "2%" }}>Biohazardous Waste Management</h1>
+              <h4 style={{ color: 'white', paddingLeft: "2%" }}>for Laboratories at UNC Chapel Hill</h4>
               <p class="lead" style={{ color: 'white', paddingLeft: "2%", fontSize: "2em" }}>EHS Self Study Unit</p>
             </Col>
             <Col><img src={well} alt="Old Well" style={{ float: "right", paddingRight: "10%", width: "10em" }} /></Col>

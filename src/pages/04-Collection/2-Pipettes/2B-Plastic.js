@@ -8,7 +8,9 @@ export default class PlasticB extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Unacceptable Pipette Disposal</h1>
         <br />
         <Row>

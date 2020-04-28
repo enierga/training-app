@@ -8,7 +8,9 @@ export default class TypesQ2 extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Biohazardous Waste</h1>
         <p>Click on the correct answer to proceed.</p>
         <MultChoice

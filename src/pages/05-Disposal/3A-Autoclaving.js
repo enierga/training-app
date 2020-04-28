@@ -10,7 +10,9 @@ export default class AutocA extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Autoclaving Overview</h1>
         <p>
           DO NOT enclose the cardboard boxes used for gathering sharps/glass within an autoclave bag. This will prevent steam penetration during autoclaving. Steam penetration is crucial during the decontaminating process.

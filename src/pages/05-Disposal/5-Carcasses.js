@@ -8,7 +8,9 @@ export default class Carc extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Contaminated Animal Carcasses, Body Parts, and Bedding</h1>
         <br />
         <Row>

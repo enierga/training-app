@@ -8,7 +8,9 @@ export default class Mixed extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Mixed Waste</h1>
         <p>
           Biological waste contaminated with hazardous chemicals, radioactive substances, or carcinogens require special disposal by EHS.

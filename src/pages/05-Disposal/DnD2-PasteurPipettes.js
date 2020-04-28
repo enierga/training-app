@@ -96,7 +96,9 @@ function PasteurPipettesDnD() {
 
   return order ? (
     <div>
-      <Header />
+      <Header 
+      header = 'Biohazard Waste Disposal'
+      />
       <Container>
         <div style={{ textAlign: "center", }}>
           <h1>Waste Disposal</h1>
@@ -185,7 +187,9 @@ function PasteurPipettesDnD() {
     </div>
   ) : (
       <div>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <Container>
           <div style={{ textAlign: "center", }}>
             <h1>Waste Disposal</h1>

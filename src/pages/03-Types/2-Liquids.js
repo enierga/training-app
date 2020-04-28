@@ -8,7 +8,9 @@ export default class Liquids extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Liquids</h1>
         <p>
           Pourable wastes

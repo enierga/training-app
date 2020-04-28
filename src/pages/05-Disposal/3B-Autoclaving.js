@@ -9,7 +9,9 @@ export default class AutocB extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Autoclaving: Liquid Waste</h1>
         <br />
         <Row>

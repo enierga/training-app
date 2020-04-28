@@ -8,7 +8,9 @@ export default class Solids extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Dry Solids</h1>
         <p>Any <u>non-sharp</u> material that is contaminated with human or animal specimens, or pathogenic microorganisms.</p>
         <ListGroup style={{ width: '80%', margin: '0 auto' }}>

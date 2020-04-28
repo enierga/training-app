@@ -8,7 +8,9 @@ export default class DPolicy extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Biohazardous Waste</h1>
         <br />
         <Row>

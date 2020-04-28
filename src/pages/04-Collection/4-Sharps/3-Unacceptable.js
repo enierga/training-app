@@ -9,7 +9,9 @@ export default class SharpsUnacc extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Unacceptable Sharps Disposal</h1>
         <br />
         <Row>

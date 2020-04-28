@@ -8,7 +8,9 @@ export default class Flask extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Liquid Waste</h1>
         <h3>Proper aspiration vacuum flask set up</h3>
         <br />

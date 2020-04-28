@@ -9,7 +9,9 @@ export default class Policy extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazardous Waste Management'
+        />
         <h1>Introduction</h1>
         <p>
           The UNC-CH Biological Waste Disposal Policy stipulates proper procedures for the collection, decontamination, and disposal of laboratory-generated biohazard waste. This policy has been developed in order to minimize the risk of exposure to those who may come into contact with biohazard waste generated in a UNC-CH research laboratory, specifically:

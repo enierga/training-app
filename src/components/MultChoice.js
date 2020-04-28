@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button, Badge, Card, Tooltip, Overlay } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+
 
 // props needed for each MC question:
 //

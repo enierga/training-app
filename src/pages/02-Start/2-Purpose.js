@@ -8,7 +8,9 @@ export default class Purpose extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header
+        header = 'Biohazardous Waste Management'
+        />
         <h1>Purpose</h1>
         <p>This training is meant to familiarize generators of biohazardous waste with information regarding:</p>
         <ListGroup style={{ width: '80%', margin: '0 auto' }}>

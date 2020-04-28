@@ -8,7 +8,9 @@ export default class SharpsGen extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Biohazardous Sharps</h1>
         <br />
         <Row>

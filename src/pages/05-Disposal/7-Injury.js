@@ -8,7 +8,9 @@ export default class Injury extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Injuries</h1>
         <br />
         <Row>

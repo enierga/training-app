@@ -8,7 +8,9 @@ export default class Secondary extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Dry Solids</h1>
         <h3>Secondary Containment</h3>
         <br />

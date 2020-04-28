@@ -10,7 +10,9 @@ export default class ProcessA extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Waste Disposal Overview</h1>
         <br />
         <Row>

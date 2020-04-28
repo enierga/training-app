@@ -8,7 +8,9 @@ export default class LiqGen extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Liquid Biological Waste</h1>
         <br />
         <Row>

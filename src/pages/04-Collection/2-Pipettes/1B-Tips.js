@@ -8,7 +8,9 @@ export default class TipsB extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Unacceptable Pipette Tips Disposal</h1>
         <br />
         <Row>

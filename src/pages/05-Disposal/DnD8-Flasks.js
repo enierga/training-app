@@ -98,7 +98,9 @@ function FlasksDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return order ? (
     <div>
-      <Header />
+      <Header 
+      header = 'Biohazard Waste Disposal'
+       />
       <Container>
         <div style={{textAlign: "center",}}>
         <h1>Waste Disposal</h1>
@@ -187,7 +189,9 @@ function FlasksDnD() {
     </div>
   ) : (
       <div>
-        <Header />
+        <Header 
+      header = 'Biohazard Waste Disposal'
+       />
         <Container>
         <div style={{textAlign: "center",}}>
         <h1>Waste Disposal</h1>

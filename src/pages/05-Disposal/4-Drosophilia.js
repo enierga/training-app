@@ -8,7 +8,9 @@ export default class Droso extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Drosophilia</h1>
         <br />
         <Row>

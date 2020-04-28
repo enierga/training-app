@@ -8,7 +8,9 @@ export default class DisUnacc extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Disposal'
+        />
         <h1>Unacceptable Waste Disposal</h1>
         <br />
         <Row>

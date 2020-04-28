@@ -8,7 +8,9 @@ export default class CollectionQ1 extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Waste Collection</h1>
         <p>Click on the correct answer to proceed.</p>
         <TrueFalse

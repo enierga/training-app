@@ -8,7 +8,9 @@ export default class Sharps extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Sharps</h1>
         <p>
           Ability to puncture or cut the skin

@@ -8,7 +8,9 @@ export default class Path extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Types of Biohazard Waste'
+        />
         <h1>Pathological</h1>
         <p>
           Animal or human organs, tissues, and body parts. Any

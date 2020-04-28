@@ -8,7 +8,9 @@ export default class LiqUnacc extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Unacceptable Liquid Waste Disposal</h1>
         <br />
         <Row>

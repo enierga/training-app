@@ -8,7 +8,9 @@ export default class Contam extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header 
+        header = 'Biohazard Waste Collection'
+        />
         <h1>Contaminated Broken Glass</h1>
         <br />
         <Row>

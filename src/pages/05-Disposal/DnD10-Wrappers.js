@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from '../../components/header';
 import { Button, Image, Card, Container } from 'react-bootstrap';
-import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
@@ -98,9 +97,9 @@ function WrapDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return order ? (
     <div>
-      <Header 
-      header = 'Biohazard Waste Disposal'
-       />
+      <Header
+        header='Biohazard Waste Disposal'
+      />
       <Container>
         <div style={{ textAlign: "center", }}>
           <h1>Waste Disposal</h1>
@@ -111,7 +110,7 @@ function WrapDnD() {
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
         >
-          {Object.entries(columns).map(([columnId, column], index) => {
+          {Object.entries(columns).map(([columnId, column]) => {
             return (
               <div
                 style={{
@@ -121,10 +120,10 @@ function WrapDnD() {
                 }}
                 key={columnId}
               >
-                <h4>{column.name}</h4>
+                <h6>{column.name}</h6>
                 <div style={{ margin: 8 }}>
                   <Droppable droppableId={columnId} key={columnId}>
-                    {(provided, snapshot) => {
+                    {(provided) => {
                       return (
                         <div
                           {...provided.droppableProps}
@@ -133,8 +132,7 @@ function WrapDnD() {
                             background: (columnId === "waste" ? "#86b7d9" : "white"),
                             border: "2px solid #86b7d9",
                             padding: 4,
-                            width: 150,
-                            minHeight: 300,
+                            minWidth: 50,
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -144,7 +142,7 @@ function WrapDnD() {
                                 draggableId={item.id}
                                 index={index}
                               >
-                                {(provided, snapshot) => {
+                                {(provided) => {
                                   return (
                                     <div
                                       ref={provided.innerRef}
@@ -154,14 +152,14 @@ function WrapDnD() {
                                         userSelect: "none",
                                         padding: 16,
                                         margin: "0 0 8px 0",
-                                        minHeight: "280px",
                                         textAlign: "center",
                                         backgroundColor: "white",
                                         color: "black",
                                         ...provided.draggableProps.style
                                       }}
                                     >
-                                      <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "7em" }}></Image>
+                                      <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "5em" }}></Image>
+                                      <br />
                                       {item.content}
                                       <br /><br />
                                       <div style={{ display: (columnId === "waste" ? "none" : "") }}>
@@ -183,26 +181,35 @@ function WrapDnD() {
             );
           })}
         </DragDropContext>
-
       </div>
-      <Nav prev="DnD9" next="DnD11" />
+
+      <div>
+        <Link to={'/DnD9'}>
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link>
+
+        <Link to={`/DnD11`}>
+          <Button id="nextButton" variant='warning' style={{ color: 'white', float: "right" }}>NEXT</Button>
+        </Link>
+      </div>
+
     </div>
   ) : (
       <div>
-        <Header 
-      header = 'Biohazard Waste Disposal'
-       />
+        <Header
+          header='Biohazard Waste Disposal'
+        />
         <Container>
-        <div style={{textAlign: "center",}}>
-        <h1>Waste Disposal</h1>
-        <p>Place the waste into the correct category to proceed.</p><br/></div>
-      </Container>
+          <div style={{ textAlign: "center", }}>
+            <h1>Waste Disposal</h1>
+            <p>Place the waste into the correct category to proceed.</p><br /></div>
+        </Container>
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
 
           <DragDropContext
             onDragEnd={result => onDragEnd(result, columns, setColumns)}
           >
-            {Object.entries(columns).map(([columnId, column], index) => {
+            {Object.entries(columns).map(([columnId, column]) => {
               return (
                 <div
                   style={{
@@ -212,10 +219,10 @@ function WrapDnD() {
                   }}
                   key={columnId}
                 >
-                  <h4>{column.name}</h4>
+                  <h6>{column.name}</h6>
                   <div style={{ margin: 8 }}>
                     <Droppable droppableId={columnId} key={columnId}>
-                      {(provided, snapshot) => {
+                      {(provided) => {
                         return (
                           <div
                             {...provided.droppableProps}
@@ -224,8 +231,7 @@ function WrapDnD() {
                               background: (columnId === "waste" ? "#86b7d9" : "white"),
                               border: "2px solid #86b7d9",
                               padding: 4,
-                              width: 150,
-                              minHeight: 300,
+                              minWidth: 50,
                             }}
                           >
                             {column.items.map((item, index) => {
@@ -235,7 +241,7 @@ function WrapDnD() {
                                   draggableId={item.id}
                                   index={index}
                                 >
-                                  {(provided, snapshot) => {
+                                  {(provided) => {
                                     return (
                                       <div
                                         ref={provided.innerRef}
@@ -245,18 +251,18 @@ function WrapDnD() {
                                           userSelect: "none",
                                           padding: 16,
                                           margin: "0 0 8px 0",
-                                          minHeight: "280px",
                                           textAlign: "center",
                                           backgroundColor: "white",
                                           color: "black",
                                           ...provided.draggableProps.style
                                         }}
                                       >
-                                        <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "7em" }}></Image>
+                                        <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "5em" }}></Image>
+                                        <br />
                                         {item.content}
-                                        <div style={{display: (columnId === "waste" ? "none" : "")}}>
-                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '50px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
-                                  </div>
+                                        <div style={{ display: (columnId === "waste" ? "none" : "") }}>
+                                          <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '50px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>
+                                        </div>
                                       </div>
                                     );
                                   }}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Header from '../../components/header';
 import { Button, Image, Card, Container } from 'react-bootstrap';
-import Nav from '../../components/nav'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
@@ -57,13 +56,13 @@ const onDragEnd = (result, columns, setColumns) => {
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
     const [removed] = sourceItems.splice(source.index, 1);
-    
+
     destItems.splice(destination.index, 0, removed);
-    if(destination.droppableId.toString() === "sharps" || destination.droppableId.toString() === "glass"){
+    if (destination.droppableId.toString() === "sharps" || destination.droppableId.toString() === "glass") {
       order = true;
-    } else if(destination.droppableId.toString() === "biowaste"){
-    } else if(destination.droppableId.toString() === "trashbag"){
-    }else if(destination.droppableId.toString() === "serological"){
+    } else if (destination.droppableId.toString() === "biowaste") {
+    } else if (destination.droppableId.toString() === "trashbag") {
+    } else if (destination.droppableId.toString() === "serological") {
     }
 
     setColumns({
@@ -94,11 +93,10 @@ const onDragEnd = (result, columns, setColumns) => {
 
 function BrokenGlassDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
-
   return order ? (
     <div>
-      <Header 
-      header = 'Biohazard Waste Disposal'
+      <Header
+        header='Biohazard Waste Disposal'
       />
       <Container>
         <div style={{ textAlign: "center", }}>
@@ -106,12 +104,12 @@ function BrokenGlassDnD() {
           <p>Place the waste into the correct category to proceed.</p><br /></div>
       </Container>
 
-      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+      <div style={{ display: "flex", justifyContent: "center", width: "100vw" }}>
 
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
         >
-          {Object.entries(columns).map(([columnId, column], index) => {
+          {Object.entries(columns).map(([columnId, column]) => {
             return (
               <div
                 style={{
@@ -121,7 +119,7 @@ function BrokenGlassDnD() {
                 }}
                 key={columnId}
               >
-                <h4>{column.name}</h4>
+                <h6>{column.name}</h6>
                 <div style={{ margin: 8 }}>
                   <Droppable droppableId={columnId} key={columnId}>
                     {(provided) => {
@@ -133,8 +131,7 @@ function BrokenGlassDnD() {
                             background: (columnId === "waste" ? "#86b7d9" : "white"),
                             border: "2px solid #86b7d9",
                             padding: 4,
-                            width: 150,
-                            minHeight: 300,
+                            minWidth: 50,
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -154,14 +151,14 @@ function BrokenGlassDnD() {
                                         userSelect: "none",
                                         padding: 16,
                                         margin: "0 0 8px 0",
-                                        minHeight: "280px",
                                         textAlign: "center",
                                         backgroundColor: "white",
                                         color: "black",
                                         ...provided.draggableProps.style
                                       }}
                                     >
-                                      <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "6em" }}></Image>
+                                      <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "5em" }}></Image>
+                                      <br />
                                       {item.content}
                                       <br /><br />
                                       <div style={{ display: (columnId === "waste" ? "none" : "") }}>
@@ -183,14 +180,23 @@ function BrokenGlassDnD() {
             );
           })}
         </DragDropContext>
-
       </div>
-      <Nav prev="SortingSampDND" next="DnD2" />
+
+      <div>
+        <Link to={'/SortingSampDND'}>
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link>
+
+        <Link to={`DnD2`}>
+          <Button id="nextButton" variant='warning' style={{ color: 'white', float: "right" }}>NEXT</Button>
+        </Link>
+      </div>
+
     </div>
   ) : (
       <div>
-        <Header 
-        header = 'Biohazard Waste Disposal'
+        <Header
+          header='Biohazard Waste Disposal'
         />
         <Container>
           <div style={{ textAlign: "center", }}>
@@ -203,7 +209,7 @@ function BrokenGlassDnD() {
           <DragDropContext
             onDragEnd={result => onDragEnd(result, columns, setColumns)}
           >
-            {Object.entries(columns).map(([columnId, column], index) => {
+            {Object.entries(columns).map(([columnId, column]) => {
               return (
                 <div
                   style={{
@@ -213,11 +219,10 @@ function BrokenGlassDnD() {
                   }}
                   key={columnId}
                 >
-
-                  <h4>{column.name}</h4>
+                  <h6>{column.name}</h6>
                   <div style={{ margin: 4 }}>
                     <Droppable droppableId={columnId} key={columnId}>
-                      {(provided, snapshot) => {
+                      {(provided) => {
                         return (
                           <div
                             {...provided.droppableProps}
@@ -226,8 +231,7 @@ function BrokenGlassDnD() {
                               background: (columnId === "waste" ? "#86b7d9" : "white"),
                               border: "2px solid #86b7d9",
                               padding: 4,
-                              width: 150,
-                              minHeight: 300,
+                              minWidth: 50,
                             }}
                           >
                             {column.items.map((item, index) => {
@@ -247,14 +251,14 @@ function BrokenGlassDnD() {
                                           userSelect: "none",
                                           padding: 16,
                                           margin: "0 0 8px 0",
-                                          minHeight: "280px",
                                           textAlign: "center",
                                           backgroundColor: "white",
                                           color: "black",
                                           ...provided.draggableProps.style
                                         }}
                                       >
-                                        <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "6em" }}></Image>
+                                        <Image src="./Types-Images/BrokenLabMaterial.jpg" rounded style={{ width: "5em", }}></Image>
+                                        <br />
                                         {item.content}
                                         <div style={{ display: (columnId === "waste" ? "none" : "") }}>
                                           <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '50px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>

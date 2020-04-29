@@ -19,7 +19,7 @@ export default class DPolicy extends Component {
                     </Col>
         </Row>
         <br />
-        <Nav prev="Carc" next="End" />
+        <Nav prev="DnD11" next="End" />
       </Container>);
   }
 }

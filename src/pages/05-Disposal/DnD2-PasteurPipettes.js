@@ -120,7 +120,7 @@ function PasteurPipettesDnD() {
                 }}
                 key={columnId}
               >
-                <h4>{column.name}</h4>
+                <h6>{column.name}</h6>
                 <div style={{ margin: 8 }}>
                   <Droppable droppableId={columnId} key={columnId}>
                     {(provided) => {
@@ -132,8 +132,7 @@ function PasteurPipettesDnD() {
                             background: (columnId == "waste" ? "#86b7d0" : "white"),
                             border: "2px solid #86b7d9",
                             padding: 4,
-                            width: 150,
-                            minHeight: 300
+                            minWidth: 50,
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -153,13 +152,12 @@ function PasteurPipettesDnD() {
                                         userSelect: "none",
                                         padding: 16,
                                         margin: "0 0 8px 0",
-                                        minHeight: "280px",
                                         backgroundColor: "white",
                                         color: "black",
                                         ...provided.draggableProps.style
                                       }}
                                     >
-                                      <Image src="./Types-Images/GlassPipettes.jpg" rounded style={{ width: "7em" }}></Image>
+                                      <Image src="./Types-Images/GlassPipettes.jpg" rounded style={{ width: "5em" }}></Image><br/>
                                       {item.content}
                                       <br /><br />
                                       <div style={{ display: (columnId == "waste" ? "none" : "") }}>
@@ -183,8 +181,15 @@ function PasteurPipettesDnD() {
         </DragDropContext>
 
       </div>
-      <Nav prev="DnD1" next="DnD3" />
-    </div>
+      <div>
+        <Link to={'/DnD1'}>
+          <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
+        </Link>
+
+        <Link to={`/DnD3`}>
+          <Button id="nextButton" variant='warning' style={{ color: 'white', float: "right" }}>NEXT</Button>
+        </Link>
+      </div>      </div>
   ) : (
       <div>
         <Header 
@@ -212,7 +217,7 @@ function PasteurPipettesDnD() {
                   }}
                   key={columnId}
                 >
-                  <h4>{column.name}</h4>
+                  <h6>{column.name}</h6>
                   <div style={{ margin: 8 }}>
                     <Droppable droppableId={columnId} key={columnId}>
                       {(provided) => {
@@ -224,8 +229,7 @@ function PasteurPipettesDnD() {
                               background: (columnId == "waste" ? "#86b7d9" : "white"),
                               border: "2px solid #86b7d9",
                               padding: 4,
-                              width: 150,
-                              minHeight: 300
+                              minWidth: 50,
                             }}
                           >
                             {column.items.map((item, index) => {
@@ -245,14 +249,13 @@ function PasteurPipettesDnD() {
                                           userSelect: "none",
                                           padding: 16,
                                           margin: "0 0 8px 0",
-                                          minHeight: "280px",
                                           textAlign: "center",
                                           backgroundColor: "white",
                                           color: "black",
                                           ...provided.draggableProps.style
                                         }}
                                       >
-                                        <Image src="./Types-Images/GlassPipettes.jpg" rounded style={{ width: "7em" }}></Image>
+                                        <Image src="./Types-Images/GlassPipettes.jpg" rounded style={{ width: "5em" }}></Image><br/>
                                         {item.content}
                                         <div style={{ display: (columnId == "waste" ? "none" : "") }}>
                                           <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '50px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>

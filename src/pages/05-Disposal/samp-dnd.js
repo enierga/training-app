@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Alert, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../../components/header';
@@ -10,7 +10,10 @@ const style = {
 }
 
 const SortingSampDnD = () => {
+
   let correctOrder = false
+  const [alert, setAlert] = useState(correctOrder)
+
   const checkOrder = (cards) => {
     for (let i = 1; i <= cards.length; i++) {
       if (cards[i - 1].id !== i) {
@@ -82,15 +85,30 @@ const SortingSampDnD = () => {
       />
     )
   }
+
   return correctOrder ? (
     <>
       <Container>
         <Header />
         <h1>Biohazard Sorting Question</h1>
         <p>
-          Sort these lab requirements by level of importance: (Press Next)
-            </p>
-        <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
+          Sort the following procedures into the current order to proceed. Click submit to check your answer.
+        </p>
+
+        <Row> 
+            <Col>
+              {cards.map((card, i) => renderCard(card, i))}
+            </Col>
+            <Col className="text-center">
+            <Alert variant="success" show={true}>
+              <Alert.Heading>Correct!</Alert.Heading>
+              <p>
+                Click next to proceed.
+              </p>
+            </Alert>
+            </Col>
+        </Row>
+
         <br /><br /><br />
         <Link to="/Injury">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
@@ -107,9 +125,25 @@ const SortingSampDnD = () => {
           <Header />
           <h1>Biohazard Sorting Question</h1>
           <p>
-            Sort the following procedures into the current order:
-            </p>
-          <div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
+            Sort the following procedures into the current order to proceed. Click submit to check your answer.
+          </p>
+
+          <Row> 
+            <Col>
+              {cards.map((card, i) => renderCard(card, i))}
+            </Col>
+            <Col className="text-center">
+            <Button variant="secondary" onClick={() => setAlert(!correctOrder)} style={{width:"50%"}}>Submit</Button><br/><br/>
+
+            <Alert variant="danger" show={alert} onClose={() => setAlert(correctOrder)} dismissible>
+              <Alert.Heading>Incorrect</Alert.Heading>
+              <p>
+                Please try again!
+              </p>
+            </Alert>
+            </Col>
+          </Row>
+                    
           <br /><br /><br />
           <Link to="/Injury">
             <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>

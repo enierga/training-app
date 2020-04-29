@@ -133,8 +133,8 @@ function WrapDnD() {
                             background: (columnId === "waste" ? "#86b7d9" : "white"),
                             border: "2px solid #86b7d9",
                             padding: 4,
-                            width: 200,
-                            minHeight: 500,
+                            width: 150,
+                            minHeight: 300,
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -154,18 +154,18 @@ function WrapDnD() {
                                         userSelect: "none",
                                         padding: 16,
                                         margin: "0 0 8px 0",
-                                        minHeight: "470px",
+                                        minHeight: "280px",
                                         textAlign: "center",
                                         backgroundColor: "white",
                                         color: "black",
                                         ...provided.draggableProps.style
                                       }}
                                     >
-                                      <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "10em" }}></Image>
+                                      <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "7em" }}></Image>
                                       {item.content}
                                       <br /><br />
                                       <div style={{ display: (columnId === "waste" ? "none" : "") }}>
-                                        <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '170px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>
+                                        <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{ minHeight: '50px', display: "flex", "justify-content": "center", "align-items": "center" }}>{column.feedback}</Card>
                                       </div>
                                     </div>
                                   );
@@ -224,8 +224,8 @@ function WrapDnD() {
                               background: (columnId === "waste" ? "#86b7d9" : "white"),
                               border: "2px solid #86b7d9",
                               padding: 4,
-                              width: 200,
-                              minHeight: 500,
+                              width: 150,
+                              minHeight: 300,
                             }}
                           >
                             {column.items.map((item, index) => {
@@ -245,17 +245,17 @@ function WrapDnD() {
                                           userSelect: "none",
                                           padding: 16,
                                           margin: "0 0 8px 0",
-                                          minHeight: "470px",
+                                          minHeight: "280px",
                                           textAlign: "center",
                                           backgroundColor: "white",
                                           color: "black",
                                           ...provided.draggableProps.style
                                         }}
                                       >
-                                        <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "10em" }}></Image>
+                                        <Image src="./Types-Images/Wrap.jpg" rounded style={{ width: "7em" }}></Image>
                                         {item.content}
                                         <div style={{display: (columnId === "waste" ? "none" : "")}}>
-                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '170px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
+                                      <Card bg={(column.feedback === "Correct!") ? "success" : "danger"} text="white" style={{minHeight: '50px',   display: "flex", "justify-content": "center", "align-items": "center"}}>{column.feedback}</Card>
                                   </div>
                                       </div>
                                     );

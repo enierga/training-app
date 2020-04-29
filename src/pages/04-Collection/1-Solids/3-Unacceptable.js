@@ -8,8 +8,8 @@ export default class SolidsUnacc extends Component {
   render() {
     return (
       <Container>
-        <Header 
-        header = 'Biohazard Waste Collection'
+        <Header
+          header='Biohazard Waste Collection'
         />
         <h1>Unacceptable Waste Disposal</h1>
         <br />
@@ -22,7 +22,7 @@ export default class SolidsUnacc extends Component {
         <Row>
           <Col className="text-center">Non-biohazard bag as primary container. Stacking biohazard waste containers.</Col>
           <Col className="text-center">Keeping the lid propped open. (The lid should only be open when actively adding waste to the container.)</Col>
-          <Col className="text-center">Using a cardboard box as a secondary container.</Col>
+          <Col className="text-center">Using a cardboard box as a secondary container. (Exception for decontaminated serological pipettes)</Col>
         </Row>
         <br />
         <Nav prev="Secondary" next="TipsA" />

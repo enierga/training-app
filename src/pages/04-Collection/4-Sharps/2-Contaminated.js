@@ -8,8 +8,8 @@ export default class Contam extends Component {
   render() {
     return (
       <Container>
-        <Header 
-        header = 'Biohazard Waste Collection'
+        <Header
+          header='Biohazard Waste Collection'
         />
         <h1>Contaminated Broken Glass</h1>
         <br />
@@ -21,7 +21,7 @@ export default class Contam extends Component {
           <Col xs={6} md={6} className="my-auto">
             Small shards of contaminated broken glass or Pasteur pipettes should be placed into the red sharps containers.
                         <br /><br />
-                        Large contaminated broken glass items must be autoclaved separately in a hard-walled container such as a cardboard box or commercial broken glass box. Pasteur pipettes can also be placed in this box.
+                        Large contaminated broken glass items must be autoclaved separately in a hard-walled container such as a cardboard box or commercial broken glass box. Pasteur pipettes can be placed in a commercial broken glass box.
                         <br /><br />
                         Line the box with an orange autoclave bag bearing an autoclave tape indicator "x" over the bag's biohazard symbol before lining the box
                     </Col>

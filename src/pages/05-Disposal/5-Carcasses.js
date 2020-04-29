@@ -24,7 +24,7 @@ export default class Carc extends Component {
                     </Col>
         </Row>
         <br />
-        <Nav prev="Droso" next="DPolicy" />
+        <Nav prev="Droso" next="Injury" />
       </Container>);
   }
 }

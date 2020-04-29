@@ -13,7 +13,7 @@ export default class AutocA extends Component {
         <Header 
         header = 'Biohazard Waste Disposal'
         />
-        <h1>Autoclaving Overview</h1>
+        <h1>Broken Glass Disposal Overview</h1>
         <p>
           DO NOT enclose the cardboard boxes used for gathering sharps/glass within an autoclave bag. This will prevent steam penetration during autoclaving. Steam penetration is crucial during the decontaminating process.
                 </p>
@@ -29,7 +29,7 @@ export default class AutocA extends Component {
         <Row>
           <Col className="text-center">Loosely close the biohazard bag inside of the box.</Col>
           <Col className="text-center"></Col>
-          <Col className="text-center">Place the entire box with contents into the autoclave.</Col>
+          <Col className="text-center">Place the entire box with contents into the autoclave. This must be on a large tray or secondary container since the cardboard will become soft and broken down during the autoclave process.</Col>
           <Col className="text-center"></Col>
           <Col className="text-center">After autoclaving, place the box into the larger containers for autoclave trash.</Col>
         </Row>

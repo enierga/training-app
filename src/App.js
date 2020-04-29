@@ -38,8 +38,7 @@ import AutocA from './pages/05-Disposal/3A-Autoclaving'
 import AutocB from './pages/05-Disposal/3B-Autoclaving'
 import Droso from './pages/05-Disposal/4-Drosophilia'
 import Carc from './pages/05-Disposal/5-Carcasses'
-import DPolicy from './pages/05-Disposal/6-Policy'
-import Injury from './pages/05-Disposal/7-Injury'
+import Injury from './pages/05-Disposal/6-Injury'
 import BrokenGlassDnD from './pages/05-Disposal/DnD1-BrokenGlass';
 import PasteurPipettesDnD from './pages/05-Disposal/DnD2-PasteurPipettes';
 import BloodTubeDnD from './pages/05-Disposal/DnD3-BloodTube';
@@ -53,7 +52,8 @@ import WrapDnD from './pages/05-Disposal/DnD10-Wrappers'
 import NeedleDnD from './pages/05-Disposal/DnD11-Needles'
 import SortingSampDnD from './pages/05-Disposal/samp-dnd';
 
-import End from './pages/End/06-End'
+import DPolicy from './pages/End/Policy'
+import End from './pages/End/End'
 
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
@@ -121,6 +121,7 @@ class App extends Component {
             <Route exact path="/CollectionQ5" component={CollectionQ5} />
 
             {/* End */}
+            <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/End" component={End} />
 
             {/*05-Disposal*/}
@@ -131,7 +132,6 @@ class App extends Component {
             <Route exact path="/AutocB" component={AutocB} />
             <Route exact path="/Droso" component={Droso} />
             <Route exact path="/Carc" component={Carc} />
-            <Route exact path="/DPolicy" component={DPolicy} />
             <Route exact path="/Injury" component={Injury} />
             <DndProvider backend={Backend}>
               <Route exact path="/DnD1" component={BrokenGlassDnD} />
@@ -147,6 +147,7 @@ class App extends Component {
               <Route exact path="/DnD11" component={NeedleDnD} />
               <Route exact path="/SortingSampDnD" component={SortingSampDnD} />
             </DndProvider>
+
           </Switch>
         </Router>
       </div>

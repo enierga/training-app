@@ -146,7 +146,7 @@ function NeedleDnD() {
                                 draggableId={item.id}
                                 index={index}
                               >
-                                {(provided, snapshot) => {
+                                {(provided) => {
                                   return (
                                     <div
                                       ref={provided.innerRef}
@@ -187,7 +187,7 @@ function NeedleDnD() {
         </DragDropContext>
 
       </div>
-      <Nav prev="DnD10" next="End" />
+      <Nav prev="DnD10" next="DPolicy" />
     </div>
   ) : (
       <div>
@@ -237,7 +237,7 @@ function NeedleDnD() {
                                   draggableId={item.id}
                                   index={index}
                                 >
-                                  {(provided, snapshot) => {
+                                  {(provided) => {
                                     return (
                                       <div
                                         ref={provided.innerRef}

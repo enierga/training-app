@@ -97,7 +97,7 @@ const onDragEnd = (result, columns, setColumns) => {
 function SerolDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return order ? (
-    <div>
+    <Container>
       <Header
         header='Biohazard Waste Disposal'
       />
@@ -194,9 +194,9 @@ function SerolDnD() {
         </Link>
       </div>
 
-    </div>
+    </Container>
   ) : (
-      <div>
+      <Container>
         <Header
           header='Biohazard Waste Disposal'
         />
@@ -284,7 +284,7 @@ function SerolDnD() {
         <Link to="/DnD8">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

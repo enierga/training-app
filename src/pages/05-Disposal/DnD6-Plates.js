@@ -97,7 +97,7 @@ function PlatesDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
 
   return order ? (
-    <div>
+    <Container>
       <Header
         header='Biohazard Waste Disposal'
       />
@@ -195,9 +195,9 @@ function PlatesDnD() {
         </Link>
       </div>
 
-    </div>
+    </Container>
   ) : (
-      <div>
+      <Container>
         <Header
           header='Biohazard Waste Disposal'
         />
@@ -286,7 +286,7 @@ function PlatesDnD() {
         <Link to="/DnD5">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

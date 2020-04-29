@@ -95,7 +95,7 @@ function PasteurPipettesDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
 
   return order ? (
-    <div>
+    <Container>
       <Header 
       header = 'Biohazard Waste Disposal'
       />
@@ -189,9 +189,9 @@ function PasteurPipettesDnD() {
         <Link to={`/DnD3`}>
           <Button id="nextButton" variant='warning' style={{ color: 'white', float: "right" }}>NEXT</Button>
         </Link>
-      </div>      </div>
+      </div>      </Container>
   ) : (
-      <div>
+      <Container>
         <Header 
         header = 'Biohazard Waste Disposal'
         />
@@ -280,7 +280,7 @@ function PasteurPipettesDnD() {
         <Link to="/DnD1">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

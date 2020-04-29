@@ -89,7 +89,9 @@ const SortingSampDnD = () => {
   return correctOrder ? (
     <>
       <Container>
-        <Header />
+        <Header 
+                  header='Biohazard Waste Disposal'
+                  />
         <h1>Biohazard Sorting Question</h1>
         <p>
           Sort the following procedures into the current order to proceed. Click submit to check your answer.
@@ -122,7 +124,9 @@ const SortingSampDnD = () => {
   ) : (
       <>
         <Container>
-          <Header />
+          <Header 
+                    header='Biohazard Waste Disposal'
+          />
           <h1>Biohazard Sorting Question</h1>
           <p>
             Sort the following procedures into the current order to proceed. Click submit to check your answer.

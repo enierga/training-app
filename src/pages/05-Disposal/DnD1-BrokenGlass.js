@@ -94,7 +94,7 @@ const onDragEnd = (result, columns, setColumns) => {
 function BrokenGlassDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return order ? (
-    <div>
+    <Container>
       <Header
         header='Biohazard Waste Disposal'
       />
@@ -104,7 +104,7 @@ function BrokenGlassDnD() {
           <p>Place the waste into the correct category to proceed.</p><br /></div>
       </Container>
 
-      <div style={{ display: "flex", justifyContent: "center", width: "100vw" }}>
+      <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
 
         <DragDropContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
@@ -192,9 +192,9 @@ function BrokenGlassDnD() {
         </Link>
       </div>
 
-    </div>
+    </Container>
   ) : (
-      <div>
+      <Container>
         <Header
           header='Biohazard Waste Disposal'
         />
@@ -284,7 +284,7 @@ function BrokenGlassDnD() {
         <Link to="/SortingSampDND">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

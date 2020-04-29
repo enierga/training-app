@@ -97,7 +97,7 @@ function NeedleDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
 
   return order ? (
-    <div>
+    <Container>
       <Header
         header='Biohazard Waste Disposal'
       />
@@ -194,9 +194,9 @@ function NeedleDnD() {
         </Link>
       </div>
 
-    </div>
+    </Container>
   ) : (
-      <div>
+      <Container>
         <Header
           header='Biohazard Waste Disposal'
         />
@@ -284,7 +284,7 @@ function NeedleDnD() {
         <Link to="/DnD10">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

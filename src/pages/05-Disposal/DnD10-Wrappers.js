@@ -96,7 +96,7 @@ const onDragEnd = (result, columns, setColumns) => {
 function WrapDnD() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return order ? (
-    <div>
+    <Container>
       <Header
         header='Biohazard Waste Disposal'
       />
@@ -193,9 +193,9 @@ function WrapDnD() {
         </Link>
       </div>
 
-    </div>
+    </Container>
   ) : (
-      <div>
+      <Container>
         <Header
           header='Biohazard Waste Disposal'
         />
@@ -283,7 +283,7 @@ function WrapDnD() {
         <Link to="/DnD9">
           <Button variant='warning' style={{ color: 'white' }}>PREVIOUS</Button>
         </Link>
-      </div>
+      </Container>
     );
 }
 

@@ -38,25 +38,17 @@ const SortingSampDnD = () => {
       text: 'Place an “X” with autoclave tape over the biohazard symbol on the biohazard bag',
     },
     {
-      id: 7,
-      text: 'Remove bags and place in large containers labeled “Autoclaved”',
-    },
-    {
       id: 5,
-      text: 'Place in leakproof secondary container',
+      text: 'Remove bags and place in large containers labeled “Autoclaved”',
     },
     {
       id: 3,
       text:
-        'Remove bags when they are 2/3 full',
-    },
-    {
-      id: 6,
-      text: 'Autoclave biohazard waste using appropriate protocols',
+        'Remove bags when they are 2/3 full and loosely close the bags to allow for steam penetration. Then place in a leakproof secondary container',
     },
     {
       id: 4,
-      text: 'Loosely close the bags to allow for steam penetration',
+      text: 'Autoclave biohazard waste using appropriate protocols',
     },
   ])
   const moveCard = useCallback(

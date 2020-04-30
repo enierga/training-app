@@ -13,10 +13,7 @@ export default class Injury extends Component {
         />
         <h1>Injuries</h1>
         <br />
-        <p>Mishandling of biological waste can lead to exposures or injury incidents to researchers, facilities personnel, housekeepers,
-        and other that may come into contact with the weate. Environmental Health and Safety conducts incident investigations and responds
-        to biological safety reports across campus every year to address these issues.
-            </p>
+        <p>Mishandling of biological waste can lead to exposures or injury incidents to researchers, facilities personnel, housekeepers, and others that may come into contact with the waste. Environmental, Health & Safety conducts incident investigations and responds to biological safety reports across campus every year to address these issues.</p>
         <Row>
           <Col className="text-center my-auto" >
             <Image src="./Disposal-Images/6-1.jpg" rounded style={{ width: "15em" }} />
